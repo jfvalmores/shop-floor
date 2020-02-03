@@ -1,10 +1,17 @@
 import React from 'react'
+import Shop from './components/Shop.js';
+import Container from '@material-ui/core/Container';
+import Sidebar from './components/Sidebar.js';
 
 function App() {
   return (
-    <div>
-      Hello world
-    </div>
+    <>
+      <Sidebar>
+        <Container maxWidth="xl">
+          <Shop />
+        </Container>
+      </Sidebar>
+    </>
   );
 }
 
