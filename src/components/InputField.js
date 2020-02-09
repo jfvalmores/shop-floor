@@ -11,6 +11,7 @@ function InputField(props) {
     style,
     onBlur,
     variant,
+    required,
     onChange,
     instantUpdate,
   } = props;
@@ -44,7 +45,7 @@ function InputField(props) {
 
   return (
     <TextField
-      required
+      required={required}
       id={id}
       type={type}
       label={label}

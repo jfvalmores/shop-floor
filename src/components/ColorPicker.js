@@ -12,7 +12,7 @@ function ColorPicker(props) {
   } = props;
   const [state, setState] = useState({
     open: false,
-    color: '#00D753'
+    color: '#CCFF99'
   });
 
   function handleChange(newColor) {

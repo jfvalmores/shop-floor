@@ -17,22 +17,25 @@ function Floor(props) {
   }, [settings]);
 
   return (
-    <>
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {[...Array(y)].map((itemY, idxY) => {
         return (
-          <div key={`y-${idxY}`}>
+          <React.Fragment key={`y-${idxY}`}>
+            <div style={{ flexBasis: '100%', height: 0 }} />
             {[...Array(x)].map((itemX, idxX) => {
               return (
                 <Tile
-                  key={`x-${idxX}`}
-                  background={settings.background} />
+                  key={`y-${idxY}-x-${idxX}`}
+                  x={idxX}
+                  y={idxY}
+                  settings={settings} />
               );
             })}
-          </div>
+          </React.Fragment>
         );
       })
       }
-    </>
+    </div>
   )
 }
 
