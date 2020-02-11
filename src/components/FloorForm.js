@@ -23,8 +23,8 @@ function FloorForm(props) {
     { data: 'machine', label: 'Machine' },
   ];
   const [state, setState] = React.useState({
-    width: 8,
-    height: 8,
+    width: 6,
+    height: 6,
     floorName: '',
     background: '#CCFF99',
     activeFlag: true,

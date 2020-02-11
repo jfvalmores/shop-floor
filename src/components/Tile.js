@@ -10,15 +10,18 @@ function Tile(props) {
   } = props;
 
   function handleClick() {
-    if (!settings.addRemoveObject) return;
-    if (object) {
-      setObject(null);
+    if (settings.addRemoveObject) {
+      if (object) {
+        setObject(null);
+      } else {
+        const { image, prefix } = settings;
+        setObject({
+          image,
+          prefix,
+        });
+      }
     } else {
-      const { image, prefix } = settings;
-      setObject({
-        image,
-        prefix,
-      });
+
     }
   }
 
@@ -38,8 +41,8 @@ function Tile(props) {
 
 const styles = makeStyles({
   tile: {
-    width: 70,
-    height: 70,
+    width: 80,
+    height: 80,
     border: '.5px solid lightgrey',
     display: 'inline-block'
   }

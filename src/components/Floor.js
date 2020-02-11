@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { DndProvider } from 'react-dnd'
+import Backend from 'react-dnd-html5-backend'
 import Tile from './Tile.js';
 
 function Floor(props) {
@@ -18,23 +20,25 @@ function Floor(props) {
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      {[...Array(y)].map((itemY, idxY) => {
-        return (
-          <React.Fragment key={`y-${idxY}`}>
-            <div style={{ flexBasis: '100%', height: 0 }} />
-            {[...Array(x)].map((itemX, idxX) => {
-              return (
-                <Tile
-                  key={`y-${idxY}-x-${idxX}`}
-                  x={idxX}
-                  y={idxY}
-                  settings={settings} />
-              );
-            })}
-          </React.Fragment>
-        );
-      })
-      }
+      <DndProvider backend={Backend}>
+        {[...Array(y)].map((itemY, idxY) => {
+          return (
+            <React.Fragment key={`y-${idxY}`}>
+              <div style={{ flexBasis: '100%', height: 0 }} />
+              {[...Array(x)].map((itemX, idxX) => {
+                return (
+                  <Tile
+                    key={`y-${idxY}-x-${idxX}`}
+                    x={idxX}
+                    y={idxY}
+                    settings={settings} />
+                );
+              })}
+            </React.Fragment>
+          );
+        })
+        }
+      </DndProvider>
     </div>
   )
 }
