@@ -9,19 +9,6 @@ import ImageGetter from '../utils/ImageGetter.js';
 
 function FloorForm(props) {
   const classes = styles();
-  const imageList = [
-    { data: 'default', label: 'Default' },
-    { data: 'seat', label: 'Seat' },
-    { data: 'largeTable', label: 'Large Table' },
-    { data: 'masseuse', label: 'Masseuse' },
-    { data: 'customer', label: 'Customer' },
-    { data: 'doctor', label: 'Doctor' },
-    { data: 'barber', label: 'Barber' },
-    { data: 'room', label: 'Room' },
-    { data: 'vehicle', label: 'Vehicle' },
-    { data: 'workstation', label: 'Workstation' },
-    { data: 'machine', label: 'Machine' },
-  ];
   const [state, setState] = React.useState({
     width: 6,
     height: 6,
@@ -156,7 +143,7 @@ function FloorForm(props) {
   );
 }
 
-const { getImage } = ImageGetter();
+const { getImage, imageList } = ImageGetter();
 
 const styles = makeStyles(theme => ({
   content: {

@@ -1,11 +1,11 @@
 import React from 'react'
-import Shop from './components/Shop.js';
+import ShopFloor from './views/ShopFloor';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Shop />
+      <ShopFloor />
     </ThemeProvider>
   );
 }
