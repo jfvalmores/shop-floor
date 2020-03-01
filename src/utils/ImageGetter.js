@@ -1,50 +1,40 @@
-import Default from '../images/table_00.png';
-import Seat from '../images/table_01.png';
-import LargeTable from '../images/table_02.png';
-import Masseuse from '../images/table_03.png';
-import Customer from '../images/table_04.png';
-import Doctor from '../images/table_05.png';
-import Barber from '../images/table_06.png';
-import Room from '../images/table_07.png';
-import Vehicle from '../images/table_08.png';
-import Workstation from '../images/table_09.png';
-import Machine from '../images/table_10.png';
+import * as image from '../images';
 
 function ImageGetter() {
   const getImage = (id) => {
     switch (id) {
       case 'seat':
-        return Seat;
+        return image.Seat;
 
       case 'largeTable':
-        return LargeTable;
+        return image.LargeTable;
 
       case 'masseuse':
-        return Masseuse;
+        return image.Masseuse;
 
       case 'customer':
-        return Customer;
+        return image.Customer;
 
       case 'doctor':
-        return Doctor;
+        return image.Doctor;
 
       case 'barber':
-        return Barber;
+        return image.Barber;
 
       case 'room':
-        return Room;
+        return image.Room;
 
       case 'vehicle':
-        return Vehicle;
+        return image.Vehicle;
 
       case 'workstation':
-        return Workstation;
+        return image.Workstation;
 
       case 'machine':
-        return Machine;
+        return image.Machine;
 
       default:
-        return Default;
+        return image.Default;
 
     }
   }

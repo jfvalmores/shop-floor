@@ -79,6 +79,7 @@ const styles = makeStyles({
     marginRight: 10
   },
   colorBtn: {
+    minWidth: 40,
     color: 'rgba(0,0,0,0)'
   },
   container: {

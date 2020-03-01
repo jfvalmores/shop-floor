@@ -28,10 +28,10 @@ function Floor(props) {
               {[...Array(x)].map((itemX, idxX) => {
                 return (
                   <Tile
-                    key={`y-${idxY}-x-${idxX}`}
                     x={idxX}
                     y={idxY}
-                    settings={settings} />
+                    settings={settings}
+                    key={`y-${idxY}-x-${idxX}`} />
                 );
               })}
             </React.Fragment>
