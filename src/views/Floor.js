@@ -1,5 +1,7 @@
 import React from 'react';
 import ImageGetter from '../utils/ImageGetter';
+import { canMoveObject, moveObject } from './Logic';
+import { useDrop, useDrag } from 'react-dnd'
 
 const boardStyle = {
   display: 'inline-block',
@@ -15,7 +17,6 @@ const breakWrap = {
 
 function Floor(props) {
   const { settings, piecePosition } = props;
-  if (settings === null) return null;
   console.log(settings);
 
   function getFloorTiles(width = 5, height = 5) {
@@ -65,26 +66,47 @@ function Floor(props) {
 
 function Table(props) {
   const { image, prefix } = props;
+  const [{ isDragging }, drag, preview] = useDrag({
+    item: { type: 'OBJECT' },
+    collect: monitor => ({
+      isDragging: !!monitor.isDragging(),
+    })
+  })
   console.log(props);
 
   return (
-    <div>
-      <img style={{ width: '100%', padding: '10px 25px 0' }} src={getImage(image.data)} alt={image.label} />
-      <div style={{ textAlign: 'center' }}>{prefix}</div>
-    </div>
+    <>
+      {/* <DragPreviewImage connect={preview} src={knightImage} /> */}
+      <div ref={drag}>
+        <img style={{ width: '100%', padding: '10px 25px 0' }} src={getImage(image.data)} alt={image.label} />
+        <div style={{ textAlign: 'center' }}>{prefix}</div>
+      </div>
+    </>
   );
 }
 
 function FloorTile(props) {
+  const [{ isOver, canDrop }, drop] = useDrop({
+    accept: 'OBJECT',
+    canDrop: () => canMoveObject(props.x, props.y),
+    drop: () => moveObject(props.x, props.y),
+    collect: monitor => ({
+      isOver: !!monitor.isOver(),
+      canDrop: !!monitor.canDrop(),
+    }),
+  });
+
   return (
-    <div style={{
-      width: 80,
-      height: 80,
-      borderRight: '1px solid grey',
-      borderBottom: '1px solid grey',
-      borderCollapse: 'collapse',
-      display: 'table-cell',
-    }}>
+    <div
+      ref={drop}
+      style={{
+        width: 80,
+        height: 80,
+        borderRight: '1px solid grey',
+        borderBottom: '1px solid grey',
+        borderCollapse: 'collapse',
+        display: 'table-cell',
+      }}>
       <Tile>
         {props.children}
       </Tile>

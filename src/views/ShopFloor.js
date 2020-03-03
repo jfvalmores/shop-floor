@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Floor from './Floor';
 import Sidebar from '../components/Sidebar';
+import { DndProvider } from 'react-dnd';
+import Backend from 'react-dnd-html5-backend';
+import { listenChanges } from './Logic';
 
 function ShopFloor() {
   const [shopSettings, setShopSettings] = useState(null);
+  const [objectPos, setObjectPos] = useState([{ x: 0, y: 0 }]);
+
+  useEffect(() => listenChanges(newPos => setObjectPos(newPos)));
 
   const handleFormUpdate = (params) => {
     setShopSettings(params);
@@ -11,9 +17,13 @@ function ShopFloor() {
 
   return (
     <Sidebar onFormUpdate={handleFormUpdate}>
-      <Floor
-        settings={shopSettings}
-        piecePosition={[{ x: 2, y: 2 }]} />
+      <DndProvider backend={Backend}>
+        {shopSettings &&
+          <Floor
+            settings={shopSettings}
+            piecePosition={objectPos} />
+        }
+      </DndProvider>
     </Sidebar>
   )
 }
