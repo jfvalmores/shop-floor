@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Floor from './Floor';
+import Floor from '../components/Floor';
 import Sidebar from '../components/Sidebar';
 import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
-import { listenChanges } from './Logic';
+import { listenChanges } from '../utils/Logic';
 
 function ShopFloor() {
   const [shopSettings, setShopSettings] = useState(null);
