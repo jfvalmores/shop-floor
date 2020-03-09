@@ -41,6 +41,9 @@ function FloorTile(props) {
       }}>
       <Tile>
         {children}
+        {isOver && !canDrop && <div style={{ backgroundColor: 'red', width: 10, height: 10 }} />}
+        {!isOver && canDrop && <div style={{ backgroundColor: 'yellow', width: 10, height: 10 }} />}
+        {isOver && canDrop && <div style={{ backgroundColor: 'green', width: 10, height: 10 }} />}
       </Tile>
     </div>
   );

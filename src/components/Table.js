@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageGetter from '../utils/ImageGetter.js';
-import { useDrag } from 'react-dnd';
+import { DragPreviewImage, useDrag } from 'react-dnd';
 
 function Table(props) {
   const { image, prefix } = props;
@@ -13,8 +13,12 @@ function Table(props) {
 
   return (
     <>
-      {/* <DragPreviewImage connect={preview} src={knightImage} /> */}
-      <div ref={drag}>
+      <DragPreviewImage connect={preview} src={getImage(image.data)} />
+      <div
+        ref={drag}
+        style={{
+          opacity: isDragging ? 0.5 : 1,
+        }}>
         <img style={{ width: '100%', padding: '10px 25px 0' }} src={getImage(image.data)} alt={image.label} />
         <div style={{ textAlign: 'center' }}>{prefix}</div>
       </div>
