@@ -1,22 +1,36 @@
 import React from 'react';
 import Tile from './Tile'
-import { canMoveObject, moveObject } from '../utils/Logic';
 import { useDrop } from 'react-dnd'
 
 function FloorTile(props) {
+  const {
+    x, y,
+    performCanMoveObject,
+    performMoveObject,
+    onClick,
+    children,
+  } = props;
+
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: 'OBJECT',
-    canDrop: () => canMoveObject(props.x, props.y),
-    drop: () => moveObject(props.x, props.y),
+    canDrop: () => performCanMoveObject(x, y),
+    drop: (item) => {
+      performMoveObject(item, { x, y })
+    },
     collect: monitor => ({
       isOver: !!monitor.isOver(),
       canDrop: !!monitor.canDrop(),
     }),
   });
 
+  const updateObject = () => {
+    onClick(x, y);
+  }
+
   return (
     <div
       ref={drop}
+      onClick={updateObject}
       style={{
         width: 80,
         height: 80,
@@ -26,7 +40,7 @@ function FloorTile(props) {
         display: 'table-cell',
       }}>
       <Tile>
-        {props.children}
+        {children}
       </Tile>
     </div>
   );

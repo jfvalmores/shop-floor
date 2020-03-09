@@ -5,12 +5,11 @@ import { useDrag } from 'react-dnd';
 function Table(props) {
   const { image, prefix } = props;
   const [{ isDragging }, drag, preview] = useDrag({
-    item: { type: 'OBJECT' },
+    item: { ...props, type: 'OBJECT' },
     collect: monitor => ({
       isDragging: !!monitor.isDragging(),
     })
   })
-  console.log(props);
 
   return (
     <>

@@ -1,11 +1,12 @@
-let objectPosition = [{ x: 0, y: 0 }];
+let objectPosition = [];
 let observers = [];
 
 function emitChange() {
   observers.forEach(o => o && o(objectPosition));
 }
 
-export function listenChanges(o) {
+export function processChanges(mainObject, o) {
+  objectPosition = [...mainObject];
   observers.push(o);
   emitChange();
 
@@ -18,7 +19,7 @@ export function canMoveObject(toX, toY) {
   return true;
 }
 
-export function moveObject(x, y) {
-  objectPosition = [{ x, y }]
+export function moveObject(objectPosition, x, y) {
+  objectPosition = [...objectPosition, { x, y, prefix: 'yo' }]
   emitChange();
 }

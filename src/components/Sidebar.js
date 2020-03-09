@@ -9,7 +9,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import FloorForm from './FloorForm.js';
 
 function Sidebar(props) {
   const { container } = props;
@@ -24,7 +23,9 @@ function Sidebar(props) {
   };
 
   const drawer = (
-    <FloorForm onChange={props.onFormUpdate} />
+    <>
+      {props.sidebarForm}
+    </>
   );
 
   return (

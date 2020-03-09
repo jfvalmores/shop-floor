@@ -15,10 +15,10 @@ const breakWrap = {
 };
 
 function Floor(props) {
-  const { settings, piecePosition } = props;
-  console.log(settings);
+  const { mSettings, mObject } = props;
+  console.log(mSettings);
 
-  function getFloorTiles(width = 5, height = 5) {
+  const getFloorTiles = (width = 5, height = 5) => {
     const floorTiles = [];
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
@@ -30,7 +30,7 @@ function Floor(props) {
     return floorTiles;
   }
 
-  function renderFloorTile(x, y) {
+  const renderFloorTile = (x, y) => {
     const key = `y-${y}-w-${x}`;
     if (x < 0) {
       return <div key={key} style={breakWrap} />;
@@ -39,26 +39,34 @@ function Floor(props) {
     return (
       <FloorTile
         key={key}
-        x={x} y={y}>
-        {renderPiece(x, y)}
+        x={x} y={y}
+        onClick={props.updateObjects}
+        performMoveObject={props.performMoveObject}
+        performCanMoveObject={props.performCanMoveObject}
+      >
+        {
+          mObject.map(item => renderPiece(x, y, item))
+        }
       </FloorTile>
     );
   }
 
-  function renderPiece(x, y) {
-    const isObjectHere = x === piecePosition[0].x && y === piecePosition[0].y;
+  const renderPiece = (x, y, item) => {
+    const isObjectHere = x === item.x && y === item.y;
     return isObjectHere ?
       <Table
-        image={settings.image}
-        prefix={settings.prefix} /> : null;
+        key={`x-${x}-y-${y}`}
+        x={x} y={y}
+        image={item.image}
+        prefix={item.prefix} /> : null;
   }
 
   return (
     <div style={{
       ...boardStyle,
-      backgroundColor: settings.background,
+      backgroundColor: mSettings.background,
     }}>
-      {getFloorTiles(settings.width, settings.height)}
+      {getFloorTiles(mSettings.width, mSettings.height)}
     </div>
   );
 }
