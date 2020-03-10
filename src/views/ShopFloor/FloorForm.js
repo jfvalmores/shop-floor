@@ -2,11 +2,13 @@
 import React from 'react';
 import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
-import InputField from './InputField.js';
-import CheckBox from './CheckBox.js';
-import ColorPicker from './ColorPicker.js';
-import SelectDropdown from './SelectDropdown.js';
-import ImageGetter from '../utils/ImageGetter.js';
+import {
+  CheckBox,
+  InputField,
+  ColorPicker,
+  SelectDropdown,
+} from '../../components/';
+import ImageGetter from '../../utils/ImageGetter.js';
 
 function FloorForm(props) {
   const classes = styles();
@@ -125,7 +127,7 @@ function FloorForm(props) {
         </div>
       }
       <Divider />
-      { props.controlButtons }
+      {props.controlButtons}
     </div>
   );
 }

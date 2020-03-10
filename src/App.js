@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ShopFloorList from './views/ShopFloorList';
+import Popup from './components/Popup';
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 function App() {
+  const [popup, showPopup] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const popupMessage = (m = '') => {
+    setMessage(m);
+    showPopup(true);
+  }
+
   return (
     <ThemeProvider theme={theme}>
-      <ShopFloorList />
+      <ShopFloorList popupMessage={popupMessage} />
+      <Popup
+        open={popup}
+        onClose={() => showPopup(false)}
+        message={message}
+      />
     </ThemeProvider>
   );
 }

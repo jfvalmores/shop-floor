@@ -1,21 +1,25 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
-import Floor from '../components/Floor';
-import Sidebar from '../components/Sidebar';
 import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
 import { makeStyles } from '@material-ui/core/styles';
-import FloorForm from '../components/FloorForm';
-import FabIcon from '../components/FabIcon';
-import ArrowBackIosSharpIcon from '@material-ui/icons/ArrowBackIosSharp';
-import SaveIcon from '@material-ui/icons/Save';
 import Button from '@material-ui/core/Button';
-import BlockIcon from '@material-ui/icons/Block';
-import EditIcon from '@material-ui/icons/Edit';
 import ImageGetter from '../utils/ImageGetter';
-import DeleteIcon from '@material-ui/icons/Delete';
-import AlertDialog from '../components/AlertDialog';
 import CInterface from '../core/CInterface';
+import {
+  Floor,
+  FloorForm,
+} from './ShopFloor/';
+import {
+  FabIcon,
+  Sidebar,
+  AlertDialog
+} from '../components/';
+import SaveIcon from '@material-ui/icons/Save';
+import EditIcon from '@material-ui/icons/Edit';
+import BlockIcon from '@material-ui/icons/Block';
+import DeleteIcon from '@material-ui/icons/Delete';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 function ShopFloor(props) {
   const [mObject, setObjectList] = useState([]);
@@ -31,8 +35,8 @@ function ShopFloor(props) {
     activeFlag: true,
     arrangeObject: false,
     addRemoveObject: true,
-    image: imageList[0],
     prefix: 'Table',
+    image: imageList[0],
   };
 
   useEffect(() => {
@@ -64,13 +68,15 @@ function ShopFloor(props) {
   }
 
   const formatData = (data) => {
+    if (!data) return;
+
     let settings = {};
     const { objectList } = data;
     ({ ...settings } = data);
     setObjectList(objectList);
     delete settings['objectList'];
 
-    const newParams = { 
+    const newParams = {
       ...defaultParams,
       ...settings,
     };
@@ -79,9 +85,9 @@ function ShopFloor(props) {
     setParams(newParams);
   }
 
-  const removeExceedingObjects = (width, height) => {
+  const removeExceedingObjects = () => {
     const list = mObject.slice();
-    setObjectList(list.filter(item => item.x <= width && item.y <= height));
+    setObjectList(list.filter(item => item.x <= mParams.width - 1 && item.y <= mParams.height - 1));
   }
 
   const updateObjects = (x, y) => {
@@ -153,13 +159,17 @@ function ShopFloor(props) {
   }
 
   const handleCancel = () => {
-    // TODO check changes
     showDiscardAlert(true);
   }
 
   const handleSave = async () => {
-    // TODO
-    const {arrangeObject, addRemoveObject, image, prefix, activeFlagDisplay, ...params} = mParams;
+    if (mParams.floorName === '') {
+      props.popupMessage('Please enter Floor Name.');
+      return false;
+    }
+
+    removeExceedingObjects();
+    const { arrangeObject, addRemoveObject, image, prefix, activeFlagDisplay, ...params } = mParams;
     params['objectList'] = mObject;
     let response;
 
@@ -173,21 +183,24 @@ function ShopFloor(props) {
       console.log(typeof response);
       console.log(response);
       props.back();
+      props.popupMessage('Successfully saved record.');
     }
   }
 
   const deleteRecord = async () => {
     console.log(props.mKeys);
-    const res = await deleteShopFloor(-1);
-    
+    const res = await deleteShopFloor(props.mKeys.id);
+
     if (JSON.stringify(res) === '{}') {
       showDeleteAlert(false);
       props.back();
+      props.popupMessage('Successfully deleted record.');
     }
   }
 
   const discardChanges = () => {
     props.setFormState('VIEW');
+    showDiscardAlert(false)
     if (props.mKeys) {
       formatData(props.mKeys);
     } else {
@@ -213,7 +226,7 @@ function ShopFloor(props) {
                 handleCancel={handleCancel}
                 handleSave={handleSave}
               />
-            } 
+            }
           />
         }
       >
@@ -232,7 +245,7 @@ function ShopFloor(props) {
           right={2}
           title="Back"
           onClick={props.back}>
-          <ArrowBackIosSharpIcon />
+          <ArrowBackIcon />
         </FabIcon>
       </Sidebar>
       <AlertDialog

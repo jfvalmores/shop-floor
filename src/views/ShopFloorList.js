@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../components/Sidebar';
+import {
+  Sidebar,
+  FabIcon,
+  DataGrid
+} from '../components/';
 
 import AddIcon from '@material-ui/icons/Add';
 import { Slide } from '@material-ui/core';
-import ShopFloor from './ShopFloor';
-import FabIcon from '../components/FabIcon';
+import ShopFloor from './ShopFloor.js';
 import CInterface from '../core/CInterface';
-import DataGrid from '../components/DataGrid';
 
-const { getShopFloorList } = CInterface();
-
-const ShopFloorList = () => {
+const ShopFloorList = (props) => {
   const [mList, setList] = useState([]);
   const [isDetail, showDetail] = React.useState(false);
   const [mKeys, setKey] = React.useState(null);
@@ -24,7 +24,7 @@ const ShopFloorList = () => {
 
   useEffect(() => {
     if (!isDetail) getShopFloor();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDetail]);
 
   const addShopFloor = () => {
@@ -66,12 +66,12 @@ const ShopFloorList = () => {
             noSide
             title="Shop Floor List"
           >
-          <DataGrid
-            list={mList}
-            def={def}
-            onClick={handleRowClick}
-          />
-            <FabIcon 
+            <DataGrid
+              list={mList}
+              def={def}
+              onClick={handleRowClick}
+            />
+            <FabIcon
               right={2}
               title="Add"
               onClick={addShopFloor}>
@@ -88,11 +88,14 @@ const ShopFloorList = () => {
             formState={formState}
             setFormState={setFormState}
             mKeys={mKeys}
-            back={() => showDetail(false)}/>
+            popupMessage={props.popupMessage}
+            back={() => showDetail(false)} />
         </div>
       </Slide>
     </React.Fragment>
   );
 }
+
+const { getShopFloorList } = CInterface();
 
 export default ShopFloorList;

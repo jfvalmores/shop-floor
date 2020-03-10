@@ -1,19 +1,19 @@
 import React from 'react';
-import Tile from './Tile'
 import { useDrop } from 'react-dnd'
 import { makeStyles } from '@material-ui/core/styles';
 
 function FloorTile(props) {
   const {
     x, y,
-    performCanMoveObject,
-    performMoveObject,
     onClick,
+    mParams,
     children,
     formState,
+    performMoveObject,
+    performCanMoveObject,
   } = props;
 
-  const classes = styles();
+  const classes = styles(props);
 
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: 'OBJECT',
@@ -35,43 +35,66 @@ function FloorTile(props) {
     <React.Fragment>
       {formState === 'VIEW' ?
         <div
+          onClick={updateObject}
           className={classes.tileContainer}>
-          <Tile>
+          <div style={{
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+          }}>
             {children}
-          </Tile>
+          </div>
         </div>
         :
         <div
           ref={drop}
           onClick={updateObject}
           className={classes.tileContainer}>
-          <Tile>
+          <div style={{
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+          }}>
             {children}
-            {isOver && !canDrop && <div className={classes.overlay} style={{ backgroundColor: 'red' }} />}
-            {!isOver && canDrop && <div className={classes.overlay} style={{ backgroundColor: 'yellow' }} />}
-            {isOver && canDrop && <div className={classes.overlay} style={{ backgroundColor: 'green' }} />}
-          </Tile>
+            {isOver && !canDrop && <Overlay color="red" />}
+            {!isOver && canDrop && <Overlay color="yellow" />}
+            {isOver && canDrop && <Overlay color="green" />}
+          </div>
         </div>
       }
     </React.Fragment>
   );
 }
 
+const Overlay = ({ color }) => {
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: '25%',
+        left: '25%',
+        height: '50%',
+        width: '50%',
+        borderRadius: '10%',
+        zIndex: 1,
+        opacity: 0.5,
+        backgroundColor: color,
+      }}
+    />
+  )
+}
+
 const styles = makeStyles({
   tileContainer: {
     width: 80,
     height: 80,
-    borderRight: '.5px solid lightskyblue',
-    borderBottom: '.5px solid lightskyblue',
+    borderRight: props => props.formState === 'VIEW' ?
+      'none' : '.5px solid lightskyblue',
+    borderBottom: props => props.formState === 'VIEW' ?
+      'none' : '.5px solid lightskyblue',
     borderCollapse: 'collapse',
     display: 'table-cell',
   },
-  overlay: {
-    width: 10,
-    height: 10,
-    position: 'absolute',
-    backgroundColor: 'red',
-  }
 });
 
 export default FloorTile;
