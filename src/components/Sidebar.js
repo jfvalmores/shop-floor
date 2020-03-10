@@ -12,7 +12,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 function Sidebar(props) {
   const { container } = props;
-  const classes = useStyles();
+  const classes = useStyles(props);
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -42,47 +42,48 @@ function Sidebar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Shop Floor
+          <Typography variant="h6" noWrap className={classes.header}>
+            {props.title}
           </Typography>
+          { props.ctrlButtons }
         </Toolbar>
       </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        {matches ?
-          <>
-            <Drawer
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              variant="permanent"
-              open
-            >
-              {drawer}
-            </Drawer>
-          </>
-          :
-          <>
-            <Drawer
-              container={container}
-              variant="temporary"
-              anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-              }}
-            >
-              {drawer}
-            </Drawer>
-          </>
-        }
-
-
-      </nav>
+      {!props.noSide &&
+        <nav className={classes.drawer} aria-label="mailbox folders">
+          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+          {matches ?
+            <>
+              <Drawer
+                classes={{
+                  paper: classes.drawerPaper,
+                }}
+                variant="permanent"
+                open
+              >
+                {drawer}
+              </Drawer>
+            </>
+            :
+            <>
+              <Drawer
+                container={container}
+                variant="temporary"
+                anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                classes={{
+                  paper: classes.drawerPaper,
+                }}
+                ModalProps={{
+                  keepMounted: true, // Better open performance on mobile.
+                }}
+              >
+                {drawer}
+              </Drawer>
+            </>
+          }
+        </nav>
+      }
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {props.children}
@@ -105,14 +106,14 @@ const useStyles = makeStyles(theme => ({
   },
   drawer: {
     [theme.breakpoints.up('sm')]: {
-      width: drawerWidth,
+      width: props => props.noSide ? 0 : drawerWidth,
       flexShrink: 0,
     },
   },
   appBar: {
     [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
+      width: props => `calc(100% - ${props.noSide ? 0 : drawerWidth}px)`,
+      marginLeft: props => props.noSide ? 0 : drawerWidth,
     },
   },
   menuButton: {
@@ -125,11 +126,14 @@ const useStyles = makeStyles(theme => ({
     minHeight: 45
   },
   drawerPaper: {
-    width: drawerWidth,
+    width: props => props.noSide ? 0 : drawerWidth,
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(2),
+  },
+  header: {
+    fontWeight: 400
   },
 }));
 

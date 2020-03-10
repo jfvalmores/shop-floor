@@ -11,6 +11,7 @@ function CheckBox(props) {
     value,
     checked,
     onChange,
+    disabled,
     switchBtn,
   } = props;
 
@@ -33,6 +34,7 @@ function CheckBox(props) {
             id={id}
             value={mValue}
             checked={checked}
+            disabled={disabled}
             onChange={handleChange}
           />
           :
@@ -40,6 +42,7 @@ function CheckBox(props) {
             id={id}
             value={mValue}
             checked={checked}
+            disabled={disabled}
             onChange={handleChange}
           />
       }

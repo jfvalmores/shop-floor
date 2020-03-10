@@ -1,6 +1,7 @@
 import React from 'react';
 import Tile from './Tile'
 import { useDrop } from 'react-dnd'
+import { makeStyles } from '@material-ui/core/styles';
 
 function FloorTile(props) {
   const {
@@ -9,7 +10,10 @@ function FloorTile(props) {
     performMoveObject,
     onClick,
     children,
+    formState,
   } = props;
+
+  const classes = styles();
 
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: 'OBJECT',
@@ -28,26 +32,47 @@ function FloorTile(props) {
   }
 
   return (
-    <div
-      ref={drop}
-      onClick={updateObject}
-      style={{
-        width: 80,
-        height: 80,
-        borderRight: '1px solid grey',
-        borderBottom: '1px solid grey',
-        borderCollapse: 'collapse',
-        display: 'table-cell',
-      }}>
-      <Tile>
-        {children}
-        {isOver && !canDrop && <div style={{ position: 'absolute', backgroundColor: 'red', width: 10, height: 10 }} />}
-        {!isOver && canDrop && <div style={{ position: 'absolute', backgroundColor: 'yellow', width: 10, height: 10 }} />}
-        {isOver && canDrop && <div style={{ position: 'absolute', backgroundColor: 'green', width: 10, height: 10 }} />}
-      </Tile>
-    </div>
+    <React.Fragment>
+      {formState === 'VIEW' ?
+        <div
+          className={classes.tileContainer}>
+          <Tile>
+            {children}
+          </Tile>
+        </div>
+        :
+        <div
+          ref={drop}
+          onClick={updateObject}
+          className={classes.tileContainer}>
+          <Tile>
+            {children}
+            {isOver && !canDrop && <div className={classes.overlay} style={{ backgroundColor: 'red' }} />}
+            {!isOver && canDrop && <div className={classes.overlay} style={{ backgroundColor: 'yellow' }} />}
+            {isOver && canDrop && <div className={classes.overlay} style={{ backgroundColor: 'green' }} />}
+          </Tile>
+        </div>
+      }
+    </React.Fragment>
   );
 }
+
+const styles = makeStyles({
+  tileContainer: {
+    width: 80,
+    height: 80,
+    borderRight: '.5px solid lightskyblue',
+    borderBottom: '.5px solid lightskyblue',
+    borderCollapse: 'collapse',
+    display: 'table-cell',
+  },
+  overlay: {
+    width: 10,
+    height: 10,
+    position: 'absolute',
+    backgroundColor: 'red',
+  }
+});
 
 export default FloorTile;
 

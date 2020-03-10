@@ -12,6 +12,7 @@ function SelectDropdown(props) {
     label,
     value,
     onChange,
+    disabled,
     helperText,
     dataProvider,
   } = props;
@@ -35,6 +36,7 @@ function SelectDropdown(props) {
         id={id}
         value={mValue}
         onChange={handleChange}
+        disabled={disabled}
       >
         {dataProvider.map((item, idx) => {
           return (

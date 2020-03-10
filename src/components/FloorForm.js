@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React from 'react';
 import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
 import InputField from './InputField.js';
@@ -9,38 +10,10 @@ import ImageGetter from '../utils/ImageGetter.js';
 
 function FloorForm(props) {
   const classes = styles();
-  const [state, setState] = React.useState({
-    width: 6,
-    height: 6,
-    floorName: '',
-    background: '#CCFF99',
-    activeFlag: true,
-    arrangeObject: false,
-    addRemoveObject: true,
-    image: imageList[0],
-    prefix: 'Table',
-  });
-
-  useEffect(() => {
-    props.onChange(state);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state]);
-
-  function handleChange(id, value) {
-    if (id === 'image') {
-      const prefix = value.label === 'Default' ? 'Table' : value.label;
-      setState({
-        ...state,
-        prefix,
-        [id]: value
-      });
-    } else {
-      setState({
-        ...state,
-        [id]: value
-      });
-    }
-  }
+  const {
+    mParams,
+    handleChange
+  } = props;
 
   return (
     <div>
@@ -51,16 +24,18 @@ function FloorForm(props) {
           label="Name"
           variant="outlined"
           required
-          value={state.floorName}
+          value={mParams.floorName}
+          disabled={props.formState === 'VIEW'}
           onChange={handleChange}
         />
 
         <CheckBox
           label="Active"
           id="activeFlag"
-          checked={state.activeFlag}
+          checked={mParams.activeFlag}
           onChange={handleChange}
-          value={state.activeFlag} />
+          disabled={props.formState === 'VIEW'}
+          value={mParams.activeFlag} />
 
       </div>
       <Divider />
@@ -68,7 +43,9 @@ function FloorForm(props) {
         <ColorPicker
           id="background"
           label="Background"
-          onChange={handleChange} />
+          value={mParams.background}
+          onChange={handleChange}
+          disabled={props.formState === 'VIEW'} />
 
         <div style={{ display: 'flex' }}>
           <InputField
@@ -77,8 +54,9 @@ function FloorForm(props) {
             label="Width"
             type="number"
             style={{ width: 90, margin: 5 }}
+            disabled={props.formState === 'VIEW'}
             onChange={handleChange}
-            value={state.width} />
+            value={mParams.width} />
 
           <InputField
             instantUpdate
@@ -86,59 +64,68 @@ function FloorForm(props) {
             label="Height"
             type="number"
             style={{ width: 90, margin: 5 }}
+            disabled={props.formState === 'VIEW'}
             onChange={handleChange}
-            value={state.height} />
+            value={mParams.height} />
         </div>
 
       </div>
       <Divider />
 
-      <div className={classes.content}>
+      {props.formState !== 'VIEW' &&
+        <div className={classes.content}>
 
-        <CheckBox
-          switchBtn
-          id="addRemoveObject"
-          label="Add/Remove Object"
-          onChange={handleChange}
-          value={state.addRemoveObject}
-          checked={state.addRemoveObject} />
+          <CheckBox
+            switchBtn
+            id="addRemoveObject"
+            label="Add/Remove Object"
+            onChange={handleChange}
+            value={mParams.addRemoveObject}
+            checked={mParams.addRemoveObject}
+            disabled={props.formState === 'VIEW'} />
 
-        <CheckBox
-          switchBtn
-          id="arrangeObject"
-          label="Arrange Object"
-          onChange={handleChange}
-          value={state.arrangeObject}
-          checked={state.arrangeObject} />
+          <CheckBox
+            switchBtn
+            id="arrangeObject"
+            label="Arrange Object"
+            onChange={handleChange}
+            value={mParams.arrangeObject}
+            checked={mParams.arrangeObject}
+            disabled={props.formState === 'VIEW'} />
 
-        {state.addRemoveObject &&
-          <>
-            <div>
-              <SelectDropdown
-                id="image"
-                label="Image"
-                value={state.image}
+          {mParams.addRemoveObject &&
+            <>
+              <div>
+                <SelectDropdown
+                  id="image"
+                  label="Image"
+                  value={mParams.image}
+                  onChange={handleChange}
+                  dataProvider={imageList}
+                  disabled={props.formState === 'VIEW'} />
+              </div>
+              <div>
+                {mParams.image.data &&
+                  <img
+                    style={{ padding: 10 }}
+                    src={getImage(mParams.image.data)}
+                    alt="Table" />
+                }
+              </div>
+              <InputField
+                id="prefix"
+                label="Prefix"
+                type="text"
+                disabled={props.formState === 'VIEW'}
                 onChange={handleChange}
-                dataProvider={imageList} />
-            </div>
-            <div>
-              {state.image.data &&
-                <img
-                  style={{ padding: 10 }}
-                  src={getImage(state.image.data)}
-                  alt="Table" />
-              }
-            </div>
-            <InputField
-              id="prefix"
-              label="Prefix"
-              type="text"
-              onChange={handleChange}
-              value={state.prefix} />
-          </>
-        }
+                value={mParams.prefix} />
+            </>
+          }
 
-      </div>
+        </div>
+      }
+      <Divider />
+      { props.controlButtons }
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import React from 'react'
-import ShopFloor from './views/ShopFloor';
+import ShopFloorList from './views/ShopFloorList';
+
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <ShopFloor />
+      <ShopFloorList />
     </ThemeProvider>
   );
 }
@@ -13,10 +14,14 @@ function App() {
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: '#005BEA',
+      selected: '#0091E7',
+      light: '#E7FAFE'
     },
     secondary: {
-      main: '#00e676',
+      main: '#1DB954',
+      selected: '#4ac776',
+      contrastText: '#fff'
     },
   },
   typography: {

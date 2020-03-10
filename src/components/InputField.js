@@ -13,6 +13,7 @@ function InputField(props) {
     variant,
     required,
     onChange,
+    disabled,
     instantUpdate,
   } = props;
 
@@ -52,6 +53,7 @@ function InputField(props) {
       style={style}
       value={mValue}
       variant={variant}
+      disabled={disabled}
       onBlur={handleBlur}
       onChange={handleChange}
     />

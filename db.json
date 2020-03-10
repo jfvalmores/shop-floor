@@ -1,0 +1,242 @@
+{
+  "shopFloorList": [
+    {
+      "id": 1,
+      "floorName": "Justine's 1st Floor",
+      "width": 7,
+      "height": 9,
+      "background": "#f06060",
+      "activeFlag": true,
+      "objectList": [
+        {
+          "x": 0,
+          "y": 0,
+          "image": {
+            "data": "default",
+            "label": "Default"
+          },
+          "prefix": "Default 1"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "image": {
+            "data": "default",
+            "label": "Default"
+          },
+          "prefix": "Default 2"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "image": {
+            "data": "default",
+            "label": "Default"
+          },
+          "prefix": "Default 3"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "floorName": "Justine's 2nd Floor",
+      "width": 5,
+      "height": 8,
+      "background": "#73fa73",
+      "activeFlag": false,
+      "objectList": [
+        {
+          "x": 0,
+          "y": 1,
+          "image": {
+            "data": "workstation",
+            "label": "Workstation"
+          },
+          "prefix": "Workstation 1"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "image": {
+            "data": "workstation",
+            "label": "Workstation"
+          },
+          "prefix": "Workstation 2"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "image": {
+            "data": "default",
+            "label": "Default"
+          },
+          "prefix": "Default 1"
+        }
+      ]
+    },
+    {
+      "width": "5",
+      "height": "7",
+      "floorName": "Justine 123",
+      "background": "#99FFBB",
+      "activeFlag": true,
+      "id": 3,
+      "objectList": [
+        {
+          "x": 1,
+          "y": 2,
+          "image": {
+            "data": "default",
+            "label": "Default"
+          },
+          "prefix": "Table 1"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "image": {
+            "data": "default",
+            "label": "Default"
+          },
+          "prefix": "Table 2"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "image": {
+            "data": "default",
+            "label": "Default"
+          },
+          "prefix": "Table 3"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "image": {
+            "data": "default",
+            "label": "Default"
+          },
+          "prefix": "Table 4"
+        }
+      ]
+    },
+    {
+      "width": "10",
+      "height": "10",
+      "floorName": "yo",
+      "background": "#68bfd5",
+      "activeFlag": true,
+      "objectList": [
+        {
+          "x": 2,
+          "y": 0,
+          "image": {
+            "data": "customer",
+            "label": "Customer"
+          },
+          "prefix": "Customer 1"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "image": {
+            "data": "customer",
+            "label": "Customer"
+          },
+          "prefix": "Customer 2"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "image": {
+            "data": "customer",
+            "label": "Customer"
+          },
+          "prefix": "Customer 3"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "image": {
+            "data": "customer",
+            "label": "Customer"
+          },
+          "prefix": "Customer 4"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "image": {
+            "data": "customer",
+            "label": "Customer"
+          },
+          "prefix": "Customer 5"
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "image": {
+            "data": "customer",
+            "label": "Customer"
+          },
+          "prefix": "Customer 6"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "image": {
+            "data": "vehicle",
+            "label": "Vehicle"
+          },
+          "prefix": "Vehicle 1"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "image": {
+            "data": "vehicle",
+            "label": "Vehicle"
+          },
+          "prefix": "Vehicle 2"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "image": {
+            "data": "vehicle",
+            "label": "Vehicle"
+          },
+          "prefix": "Vehicle 3"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "image": {
+            "data": "vehicle",
+            "label": "Vehicle"
+          },
+          "prefix": "Vehicle 4"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "image": {
+            "data": "vehicle",
+            "label": "Vehicle"
+          },
+          "prefix": "Vehicle 5"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "image": {
+            "data": "vehicle",
+            "label": "Vehicle"
+          },
+          "prefix": "Vehicle 6"
+        }
+      ],
+      "id": 4
+    }
+  ]
+}

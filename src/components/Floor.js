@@ -4,8 +4,8 @@ import FloorTile from './FloorTile'
 
 const boardStyle = {
   display: 'inline-block',
-  borderTop: '1px solid grey',
-  borderLeft: '1px solid grey',
+  borderTop: '.5px solid lightskyblue',
+  borderLeft: '.5px solid lightskyblue',
   flexWrap: 'wrap',
 }
 
@@ -15,8 +15,8 @@ const breakWrap = {
 };
 
 function Floor(props) {
-  const { mSettings, mObject } = props;
-  console.log(mSettings);
+  const { mParams, mObject } = props;
+  console.log(mParams);
 
   const getFloorTiles = (width = 5, height = 5) => {
     const floorTiles = [];
@@ -40,6 +40,7 @@ function Floor(props) {
       <FloorTile
         key={key}
         x={x} y={y}
+        formState={props.formState}
         onClick={props.updateObjects}
         performMoveObject={props.performMoveObject}
         performCanMoveObject={props.performCanMoveObject}
@@ -58,15 +59,16 @@ function Floor(props) {
         key={`x-${x}-y-${y}`}
         x={x} y={y}
         image={item.image}
-        prefix={item.prefix} /> : null;
+        prefix={item.prefix}
+        formState={props.formState} /> : null;
   }
 
   return (
     <div style={{
       ...boardStyle,
-      backgroundColor: mSettings.background,
+      backgroundColor: mParams.background,
     }}>
-      {getFloorTiles(mSettings.width, mSettings.height)}
+      {getFloorTiles(mParams.width, mParams.height)}
     </div>
   );
 }
