@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import AddIcon from '@material-ui/icons/Add';
+import CInterface from '../core/CInterface';
+import ShopFloor from './ShopFloor.js';
+import { Slide } from '@material-ui/core';
 import {
   Sidebar,
   FabIcon,
   DataGrid
 } from '../components/';
 
-import AddIcon from '@material-ui/icons/Add';
-import { Slide } from '@material-ui/core';
-import ShopFloor from './ShopFloor.js';
-import CInterface from '../core/CInterface';
-
 const ShopFloorList = (props) => {
   const [mList, setList] = useState([]);
   const [isDetail, showDetail] = React.useState(false);
-  const [mKeys, setKey] = React.useState(null);
+  const [mSelected, setSelected] = React.useState(null);
   const [formState, setFormState] = React.useState('VIEW');
 
   const def = [
@@ -28,7 +27,7 @@ const ShopFloorList = (props) => {
   }, [isDetail]);
 
   const addShopFloor = () => {
-    setKey(null);
+    setSelected(null);
     setFormState('NEW');
     showDetail(true);
   }
@@ -52,7 +51,7 @@ const ShopFloorList = (props) => {
   const handleRowClick = (index) => {
     setFormState('VIEW');
     const selectedItem = mList[index];
-    setKey(selectedItem);
+    setSelected(selectedItem);
     showDetail(true);
   }
 
@@ -87,7 +86,7 @@ const ShopFloorList = (props) => {
           <ShopFloor
             formState={formState}
             setFormState={setFormState}
-            mKeys={mKeys}
+            mKeys={mSelected}
             popupMessage={props.popupMessage}
             back={() => showDetail(false)} />
         </div>

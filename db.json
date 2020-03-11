@@ -1,28 +1,29 @@
 {
   "shopFloorList": [
     {
-      "fwidth": 6,
-      "fheight": "8",
-      "fname": "Justine's 1st Floor",
-      "fbackground": "#97d6f8",
+      "fwidth": "7",
+      "fheight": "7",
+      "fname": "1st floor",
+      "fbackground": "#97D6F8",
       "factive_flag": true,
       "id": 1,
       "activeFlagDisplay": "Yes",
       "objectList": [
         {
-          "fname": "yo wassup",
-          "fpax": "10",
+          "x": 0,
+          "y": 0,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0002",
-            "label": "Large Table",
+            "data": "0000",
+            "label": "Default",
             "prefix": "Table"
           },
-          "x": 0,
-          "y": 0
+          "fname": "Table 1"
         },
         {
           "x": 1,
           "y": 0,
+          "fpax": 4,
           "fimage_type": {
             "data": "0000",
             "label": "Default",
@@ -31,8 +32,9 @@
           "fname": "Table 2"
         },
         {
-          "x": 0,
+          "x": 2,
           "y": 1,
+          "fpax": 4,
           "fimage_type": {
             "data": "0000",
             "label": "Default",
@@ -41,8 +43,9 @@
           "fname": "Table 3"
         },
         {
-          "x": 1,
-          "y": 1,
+          "x": 0,
+          "y": 2,
+          "fpax": 4,
           "fimage_type": {
             "data": "0000",
             "label": "Default",
@@ -51,248 +54,9 @@
           "fname": "Table 4"
         },
         {
-          "x": 2,
-          "y": 0,
-          "fimage_type": {
-            "data": "0001",
-            "label": "Seat",
-            "prefix": "Seat"
-          },
-          "fname": "Seat 1"
-        },
-        {
           "x": 3,
           "y": 0,
-          "fimage_type": {
-            "data": "0001",
-            "label": "Seat",
-            "prefix": "Seat"
-          },
-          "fname": "Seat 2"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "fimage_type": {
-            "data": "0001",
-            "label": "Seat",
-            "prefix": "Seat"
-          },
-          "fname": "Seat 3"
-        },
-        {
-          "x": 3,
-          "y": 1,
-          "fimage_type": {
-            "data": "0001",
-            "label": "Seat",
-            "prefix": "Seat"
-          },
-          "fname": "Seat 4"
-        },
-        {
-          "x": 4,
-          "y": 0,
-          "fimage_type": {
-            "data": "0002",
-            "label": "Large Table",
-            "prefix": "Table"
-          },
-          "fname": "Table 5"
-        },
-        {
-          "x": 5,
-          "y": 0,
-          "fimage_type": {
-            "data": "0002",
-            "label": "Large Table",
-            "prefix": "Table"
-          },
-          "fname": "Table 6"
-        },
-        {
-          "x": 4,
-          "y": 1,
-          "fimage_type": {
-            "data": "0002",
-            "label": "Large Table",
-            "prefix": "Table"
-          },
-          "fname": "Table 7"
-        },
-        {
-          "x": 5,
-          "y": 1,
-          "fimage_type": {
-            "data": "0002",
-            "label": "Large Table",
-            "prefix": "Table"
-          },
-          "fname": "Table 8"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "fimage_type": {
-            "data": "0003",
-            "label": "Masseuse",
-            "prefix": "Masseuse"
-          },
-          "fname": "Masseuse 1"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "fimage_type": {
-            "data": "0003",
-            "label": "Masseuse",
-            "prefix": "Masseuse"
-          },
-          "fname": "Masseuse 2"
-        },
-        {
-          "x": 0,
-          "y": 3,
-          "fimage_type": {
-            "data": "0003",
-            "label": "Masseuse",
-            "prefix": "Masseuse"
-          },
-          "fname": "Masseuse 3"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "fimage_type": {
-            "data": "0003",
-            "label": "Masseuse",
-            "prefix": "Masseuse"
-          },
-          "fname": "Masseuse 4"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "fimage_type": {
-            "data": "0004",
-            "label": "Customer",
-            "prefix": "Customer"
-          },
-          "fname": "Customer 1"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "fimage_type": {
-            "data": "0004",
-            "label": "Customer",
-            "prefix": "Customer"
-          },
-          "fname": "Customer 2"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "fimage_type": {
-            "data": "0004",
-            "label": "Customer",
-            "prefix": "Customer"
-          },
-          "fname": "Customer 3"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "fimage_type": {
-            "data": "0004",
-            "label": "Customer",
-            "prefix": "Customer"
-          },
-          "fname": "Customer 4"
-        },
-        {
-          "x": 4,
-          "y": 2,
-          "fimage_type": {
-            "data": "0005",
-            "label": "Doctor",
-            "prefix": "Doctor"
-          },
-          "fname": "Doctor 1"
-        },
-        {
-          "x": 5,
-          "y": 2,
-          "fimage_type": {
-            "data": "0005",
-            "label": "Doctor",
-            "prefix": "Doctor"
-          },
-          "fname": "Doctor 2"
-        },
-        {
-          "x": 4,
-          "y": 3,
-          "fimage_type": {
-            "data": "0005",
-            "label": "Doctor",
-            "prefix": "Doctor"
-          },
-          "fname": "Doctor 3"
-        },
-        {
-          "x": 5,
-          "y": 3,
-          "fimage_type": {
-            "data": "0005",
-            "label": "Doctor",
-            "prefix": "Doctor"
-          },
-          "fname": "Doctor 4"
-        },
-        {
-          "x": 0,
-          "y": 4,
-          "fimage_type": {
-            "data": "0006",
-            "label": "Barber",
-            "prefix": "Barber"
-          },
-          "fname": "Barber 1"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "fimage_type": {
-            "data": "0006",
-            "label": "Barber",
-            "prefix": "Barber"
-          },
-          "fname": "Barber 2"
-        },
-        {
-          "x": 0,
-          "y": 5,
-          "fimage_type": {
-            "data": "0006",
-            "label": "Barber",
-            "prefix": "Barber"
-          },
-          "fname": "Barber 3"
-        },
-        {
-          "x": 1,
-          "y": 5,
-          "fimage_type": {
-            "data": "0006",
-            "label": "Barber",
-            "prefix": "Barber"
-          },
-          "fname": "Barber 4"
-        },
-        {
-          "x": 2,
-          "y": 4,
+          "fpax": 4,
           "fimage_type": {
             "data": "0007",
             "label": "Room",
@@ -301,8 +65,9 @@
           "fname": "Room 1"
         },
         {
-          "x": 3,
-          "y": 4,
+          "x": 4,
+          "y": 0,
+          "fpax": 4,
           "fimage_type": {
             "data": "0007",
             "label": "Room",
@@ -311,8 +76,9 @@
           "fname": "Room 2"
         },
         {
-          "x": 2,
-          "y": 5,
+          "x": 5,
+          "y": 0,
+          "fpax": 4,
           "fimage_type": {
             "data": "0007",
             "label": "Room",
@@ -322,7 +88,8 @@
         },
         {
           "x": 3,
-          "y": 5,
+          "y": 1,
+          "fpax": 4,
           "fimage_type": {
             "data": "0007",
             "label": "Room",
@@ -332,47 +99,63 @@
         },
         {
           "x": 4,
-          "y": 4,
+          "y": 1,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0008",
-            "label": "Vehicle",
-            "prefix": "Vehicle"
+            "data": "0007",
+            "label": "Room",
+            "prefix": "Room"
           },
-          "fname": "Vehicle 1"
+          "fname": "Room 5"
         },
         {
           "x": 5,
-          "y": 4,
+          "y": 1,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0008",
-            "label": "Vehicle",
-            "prefix": "Vehicle"
+            "data": "0007",
+            "label": "Room",
+            "prefix": "Room"
           },
-          "fname": "Vehicle 2"
+          "fname": "Room 6"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0007",
+            "label": "Room",
+            "prefix": "Room"
+          },
+          "fname": "Room 7"
         },
         {
           "x": 4,
-          "y": 5,
+          "y": 2,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0008",
-            "label": "Vehicle",
-            "prefix": "Vehicle"
+            "data": "0007",
+            "label": "Room",
+            "prefix": "Room"
           },
-          "fname": "Vehicle 3"
+          "fname": "Room 8"
         },
         {
           "x": 5,
-          "y": 5,
+          "y": 2,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0008",
-            "label": "Vehicle",
-            "prefix": "Vehicle"
+            "data": "0007",
+            "label": "Room",
+            "prefix": "Room"
           },
-          "fname": "Vehicle 4"
+          "fname": "Room 9"
         },
         {
-          "x": 0,
-          "y": 6,
+          "x": 3,
+          "y": 4,
+          "fpax": 4,
           "fimage_type": {
             "data": "0009",
             "label": "Workstation",
@@ -381,8 +164,9 @@
           "fname": "Workstation 1"
         },
         {
-          "x": 1,
-          "y": 6,
+          "x": 4,
+          "y": 4,
+          "fpax": 4,
           "fimage_type": {
             "data": "0009",
             "label": "Workstation",
@@ -391,8 +175,9 @@
           "fname": "Workstation 2"
         },
         {
-          "x": 0,
-          "y": 7,
+          "x": 5,
+          "y": 4,
+          "fpax": 4,
           "fimage_type": {
             "data": "0009",
             "label": "Workstation",
@@ -401,8 +186,9 @@
           "fname": "Workstation 3"
         },
         {
-          "x": 1,
-          "y": 7,
+          "x": 3,
+          "y": 5,
+          "fpax": 4,
           "fimage_type": {
             "data": "0009",
             "label": "Workstation",
@@ -411,84 +197,366 @@
           "fname": "Workstation 4"
         },
         {
-          "x": 2,
-          "y": 6,
-          "fimage_type": {
-            "data": "0010",
-            "label": "Machine",
-            "prefix": "Machine"
-          },
-          "fname": "Machine 1"
-        },
-        {
-          "x": 3,
-          "y": 6,
-          "fimage_type": {
-            "data": "0010",
-            "label": "Machine",
-            "prefix": "Machine"
-          },
-          "fname": "Machine 2"
-        },
-        {
           "x": 4,
-          "y": 6,
+          "y": 5,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0010",
-            "label": "Machine",
-            "prefix": "Machine"
+            "data": "0009",
+            "label": "Workstation",
+            "prefix": "Workstation"
           },
-          "fname": "Machine 3"
+          "fname": "Workstation 5"
         },
         {
           "x": 5,
-          "y": 6,
+          "y": 5,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0010",
-            "label": "Machine",
-            "prefix": "Machine"
+            "data": "0009",
+            "label": "Workstation",
+            "prefix": "Workstation"
           },
-          "fname": "Machine 4"
+          "fname": "Workstation 6"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0008",
+            "label": "Vehicle",
+            "prefix": "Vehicle"
+          },
+          "fname": "Vehicle 1"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0008",
+            "label": "Vehicle",
+            "prefix": "Vehicle"
+          },
+          "fname": "Vehicle 2"
+        },
+        {
+          "fname": "Harriete",
+          "fpax": "5",
+          "fimage_type": {
+            "data": "0004",
+            "label": "Customer",
+            "prefix": "Customer"
+          },
+          "x": 2,
+          "y": 3
+        }
+      ]
+    },
+    {
+      "fwidth": "6",
+      "fheight": "5",
+      "fname": "asd",
+      "fbackground": "#97D6F8",
+      "factive_flag": true,
+      "objectList": [
+        {
+          "x": 0,
+          "y": 5,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 1"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 2"
         },
         {
           "x": 2,
-          "y": 7,
+          "y": 5,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0010",
-            "label": "Machine",
-            "prefix": "Machine"
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
           },
-          "fname": "Machine 5"
+          "fname": "Table 3"
         },
         {
           "x": 3,
-          "y": 7,
+          "y": 5,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0010",
-            "label": "Machine",
-            "prefix": "Machine"
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
           },
-          "fname": "Machine 6"
+          "fname": "Table 4"
         },
         {
           "x": 4,
-          "y": 7,
+          "y": 5,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0010",
-            "label": "Machine",
-            "prefix": "Machine"
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
           },
-          "fname": "Machine 7"
+          "fname": "Table 5"
         },
         {
           "x": 5,
-          "y": 7,
+          "y": 5,
+          "fpax": 4,
           "fimage_type": {
-            "data": "0010",
-            "label": "Machine",
-            "prefix": "Machine"
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
           },
-          "fname": "Machine 8"
+          "fname": "Table 6"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 7"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 8"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 9"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 10"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 11"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 12"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 13"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 14"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "fwidth": "8",
+      "fheight": "6",
+      "fname": "Floor 3",
+      "fbackground": "#7ff885",
+      "factive_flag": true,
+      "id": 3,
+      "activeFlagDisplay": "Yes",
+      "objectList": [
+        {
+          "fname": "small pungko2 Table 1",
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 2"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 3"
+        },
+        {
+          "fname": "Table 4",
+          "fpax": "6",
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 5"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 6"
+        },
+        {
+          "fname": "Big pungko pungko Table 7",
+          "fpax": "7",
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "x": 4,
+          "y": 3
+        },
+        {
+          "fname": "Table 8",
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "fname": "Table 9"
+        },
+        {
+          "fname": "Customer 1",
+          "fpax": "5",
+          "fimage_type": {
+            "data": "0004",
+            "label": "Customer",
+            "prefix": "Customer"
+          },
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0004",
+            "label": "Customer",
+            "prefix": "Customer"
+          },
+          "fname": "Customer 2"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0004",
+            "label": "Customer",
+            "prefix": "Customer"
+          },
+          "fname": "Customer 3"
         }
       ]
     }

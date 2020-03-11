@@ -25,7 +25,6 @@ function FloorTile(props) {
     }),
   });
 
-
   return (
     <div
       ref={drop}

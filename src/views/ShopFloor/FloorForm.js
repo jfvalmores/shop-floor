@@ -19,7 +19,7 @@ function FloorForm(props) {
 
   const handleImageChange = (id, value) => {
     handleChange('MULTIPLE', {
-      'fprefix' : String(value.prefix).trim() === 'Default' ? 'Table' : value.prefix,
+      'fprefix': String(value.prefix).trim() === 'Default' ? 'Table' : value.prefix,
       [id]: value
     });
   }
@@ -37,7 +37,6 @@ function FloorForm(props) {
           disabled={props.formState === 'VIEW'}
           onChange={handleChange}
         />
-
         <CheckBox
           label="Active"
           id="factive_flag"
@@ -45,7 +44,6 @@ function FloorForm(props) {
           onChange={handleChange}
           disabled={props.formState === 'VIEW'}
           value={mParams.factive_flag} />
-
       </div>
       <Divider />
       <div className={classes.content}>
@@ -55,7 +53,6 @@ function FloorForm(props) {
           value={mParams.fbackground}
           onChange={handleChange}
           disabled={props.formState === 'VIEW'} />
-
         <div style={{ display: 'flex' }}>
           <InputField
             instantUpdate
@@ -66,7 +63,6 @@ function FloorForm(props) {
             disabled={props.formState === 'VIEW'}
             onChange={handleChange}
             value={mParams.fwidth} />
-
           <InputField
             instantUpdate
             id="fheight"
@@ -77,13 +73,10 @@ function FloorForm(props) {
             onChange={handleChange}
             value={mParams.fheight} />
         </div>
-
       </div>
       <Divider />
-
       {props.formState !== 'VIEW' &&
         <div className={classes.content}>
-
           <CheckBox
             switchBtn
             id="fupdate_mode_flag"
@@ -92,7 +85,6 @@ function FloorForm(props) {
             value={mParams.fupdate_mode_flag}
             checked={mParams.fupdate_mode_flag}
             disabled={props.formState === 'VIEW'} />
-
           <CheckBox
             switchBtn
             id="farrange_mode_flag"
@@ -101,7 +93,6 @@ function FloorForm(props) {
             value={mParams.farrange_mode_flag}
             checked={mParams.farrange_mode_flag}
             disabled={props.formState === 'VIEW'} />
-
           {mParams.fupdate_mode_flag &&
             <>
               <div>
@@ -130,7 +121,6 @@ function FloorForm(props) {
                 value={mParams.fprefix} />
             </>
           }
-
         </div>
       }
       <Divider />

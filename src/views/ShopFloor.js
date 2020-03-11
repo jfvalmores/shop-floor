@@ -4,6 +4,8 @@ import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
 import ImageGetter from '../utils/ImageGetter';
 import CInterface from '../core/CInterface';
+import Utils from '../utils/Utils';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import {
   Floor,
   FloorForm,
@@ -15,10 +17,9 @@ import {
   AlertDialog,
   ControlButtons,
 } from '../components/';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-function ShopFloor(props) {
-  const [mTable, setTableList] = useState([]);
+const ShopFloor = (props) => {
+  const [mTableList, setTableList] = useState([]);
   const [mParams, setParams] = useState({});
   const [deleteAlert, showDeleteAlert] = useState(false);
   const [discardAlert, showDiscardAlert] = useState(false);
@@ -32,14 +33,14 @@ function ShopFloor(props) {
     fbackground: '#97D6F8',
     factive_flag: true,
     farrange_mode_flag: false,
-    fupdate_mode_flag: true,
+    fupdate_mode_flag: false,
     fimage_type: imageList[0],
     fprefix: 'Table',
   };
 
   useEffect(() => {
     if (props.formState === 'NEW') {
-      setDefault(); 
+      setDefault();
     } else {
       formatData(props.mKeys);
     }
@@ -67,35 +68,28 @@ function ShopFloor(props) {
   const formatData = (data) => {
     if (!data) return;
 
-    let settings = {};
-    const { objectList } = data;
-    ({ ...settings } = data);
+    let params, objectList;
+    ({ objectList, ...params } = data);
     setTableList(objectList);
-    delete settings['objectList'];
 
     const newParams = {
       ...defaultParams,
-      ...settings,
+      ...params,
     };
 
-    console.log(newParams);
-    console.log(objectList);
     setParams(newParams);
-  }
-
-  const removeExceedingObjects = () => {
-    const list = mTable.slice();
-    setTableList(list.filter(item => item.x <= mParams.fwidth - 1 && item.y <= mParams.fheight - 1));
   }
 
   const updateObjects = (x, y) => {
     if (!mParams.fupdate_mode_flag || props.formState === 'VIEW') {
-      const obj = getObjectFromIndex(x, y);
+      // View table properties
+      const obj = getObjectFromIndex(mTableList, x, y);
       if (!obj) return;
-      showObjectProperties(obj);
+      showTableProperties(obj);
     } else if (props.formState !== 'VIEW') {
-      const list = mTable.slice();
-      const index = getIndexFromList(x, y);
+      // Add or remove table
+      const list = mTableList.slice();
+      const index = getIndexFromList(mTableList, x, y);
 
       if (index < 0) {
         list.push(setNewEntry(x, y, mParams));
@@ -111,76 +105,43 @@ function ShopFloor(props) {
       x, y,
       fpax: 4,
       fimage_type: params.fimage_type,
-      fname: params.fprefix + ' ' + getNextPrefixCount(params.fprefix)
+      fname: `${params.fprefix} ${getNextPrefixCount(mTableList.slice(), params.fprefix)}`
     };
   }
 
-  const showObjectProperties = (item) => {
+  const showTableProperties = (item) => {
     setSelectedTable(item);
     showTablePropModal(true);
   }
 
-  const getNextPrefixCount = (prefix = 'Default') => {
-    let nextCount = 0;
-    const list = mTable.slice();
-    list.forEach(item => {
-      if (prefix === getPrefix(item.fname)) {
-        const section = item.fname.split(' ');
-        const curr = parseInt(section[section.length - 1]);
-        if (curr > nextCount) nextCount = curr;
-      }
-    });
-
-    return nextCount += 1;
-  }
-
-  const getPrefix = (s) => {
-    return s.replace(/[0-9]/g, '').trim();
-  }
-
   const performMoveObject = (item, destination) => {
     const { mKeys } = item;
-    const list = mTable.slice();
-    const index = getIndexFromList(mKeys.x, mKeys.y);
-    list[index]['x'] = destination.x;
-    list[index]['y'] = destination.y;
+    const { toX, toY } = destination;
+    const list = mTableList.slice();
+    const index = getIndexFromList(mTableList, mKeys.x, mKeys.y);
+    list[index]['x'] = toX;
+    list[index]['y'] = toY;
     setTableList(list);
   }
 
   const performCanMoveObject = (x, y) => {
     if (!mParams.farrange_mode_flag) return false;
-    if (getIndexFromList(x, y) > -1) return false;
+    if (getIndexFromList(mTableList, x, y) > -1) return false;
 
     return true;
   }
 
-  const getIndexFromList = (x, y) => {
-    return mTable.findIndex(o => o.x === x && o.y === y);
-  }
-
-  const getObjectFromIndex = (x, y) => {
-    return mTable[getIndexFromList(x, y)];
-  }
-
-  const handleDelete = () => {
-    showDeleteAlert(true);
-  }
-
-  const handleEdit = () => {
-    props.setFormState('EDIT');
-  }
-
-  const handleCancel = () => {
-    showDiscardAlert(true);
-  }
-
-  const handleSave = async () => {
+  const validateForm = () => {
     if (mParams.fname === '') {
       props.popupMessage('Please enter Floor Name.');
       return false;
     }
+    return true;
+  }
 
-    removeExceedingObjects();
+  const handleSave = async () => {
+    if (!validateForm()) return;
+
     const {
       fprefix,
       fimage_type,
@@ -189,7 +150,7 @@ function ShopFloor(props) {
       factive_flagDisplay,
       ...params
     } = mParams;
-    params['objectList'] = mTable;
+    params['objectList'] = trimFloor(mTableList, mParams.fwidth - 1, mParams.fheight - 1);
     let response;
 
     if (params.id) {
@@ -199,15 +160,12 @@ function ShopFloor(props) {
     }
 
     if (response) {
-      console.log(typeof response);
-      console.log(response);
       props.back();
       props.popupMessage('Successfully saved record.');
     }
   }
 
   const deleteRecord = async () => {
-    console.log(props.mKeys);
     const res = await deleteShopFloor(props.mKeys.id);
 
     if (JSON.stringify(res) === '{}') {
@@ -228,8 +186,8 @@ function ShopFloor(props) {
   }
 
   const saveTableProperties = (obj) => {
-    const list = mTable.slice();
-    const index = getIndexFromList(obj.x, obj.y);
+    const list = mTableList.slice();
+    const index = getIndexFromList(mTableList, obj.x, obj.y);
     list[index] = obj;
     setTableList(list);
     props.popupMessage('Successfully updated table.');
@@ -248,9 +206,9 @@ function ShopFloor(props) {
             controlButtons={
               <ControlButtons
                 formState={props.formState}
-                handleDelete={handleDelete}
-                handleEdit={handleEdit}
-                handleCancel={handleCancel}
+                handleDelete={() => showDeleteAlert(true)}
+                handleEdit={() => props.setFormState('EDIT')}
+                handleCancel={() => showDiscardAlert(true)}
                 handleSave={handleSave}
               />
             }
@@ -262,7 +220,7 @@ function ShopFloor(props) {
             <Floor
               formState={props.formState}
               mParams={mParams}
-              mTable={mTable}
+              mTableList={mTableList}
               updateObjects={updateObjects}
               performMoveObject={performMoveObject}
               performCanMoveObject={performCanMoveObject} />
@@ -301,6 +259,12 @@ function ShopFloor(props) {
   )
 }
 
+const {
+  trimFloor,
+  getIndexFromList,
+  getObjectFromIndex,
+  getNextPrefixCount,
+} = Utils();
 const { imageList } = ImageGetter();
 const { deleteShopFloor, updateShopFloor, postShopFloor } = CInterface();
 

@@ -22,8 +22,8 @@ const TableProperties = (props) => {
       ...mKeys,
       ...props.mKeys
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.open, props.mKeys]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.mKeys]);
 
   const handleClose = () => {
     if (props.handleClose)
@@ -55,7 +55,7 @@ const TableProperties = (props) => {
         fullWidth
         maxWidth="xs"
         open={props.open}
-        disableBackdropClick
+        disableBackdropClick={props.formState !== 'VIEW'}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description">

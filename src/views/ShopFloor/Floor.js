@@ -4,11 +4,8 @@ import {
   FloorTile,
 } from './'
 
-function Floor(props) {
-  const { mParams, mTable } = props;
-  const bView = props.formState === 'VIEW';
-
-  const getFloorTiles = (width = 5, height = 5) => {
+const Floor = (props) => {
+  const getFloorTiles = (width, height) => {
     const floorTiles = [];
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
@@ -22,21 +19,19 @@ function Floor(props) {
 
   const renderFloorTile = (x, y) => {
     const key = generateKey(x, y);
-    if (x < 0) {
-      return <div key={key} style={breakWrap} />;
-    }
+    if (x < 0) return <div key={key} style={breakWrap} />;
 
     return (
       <FloorTile
         key={key}
         x={x} y={y}
-        mParams={mParams}
+        mParams={props.mParams}
         formState={props.formState}
         onClick={props.updateObjects}
         performMoveObject={props.performMoveObject}
         performCanMoveObject={props.performCanMoveObject}
       >
-        {mTable.map(item => renderPiece(x, y, item))}
+        {props.mTableList.map(item => renderPiece(x, y, item))}
       </FloorTile>
     );
   }
@@ -49,25 +44,32 @@ function Floor(props) {
       <Table
         key={sKey}
         mKeys={item}
-        formState={props.formState}/> : null;
+        formState={props.formState} /> : null;
   }
 
   const generateKey = (x, y) => {
     return `x-${x}-y-${y}`;
   }
 
+  const border = (props.formState === 'VIEW') ? 'none' : '.5px solid lightskyblue';
+  const { fbackground, fwidth, fheight } = props.mParams;
+
   return (
     <div style={{
-      display: 'inline-block',
-      borderTop: bView ? 'none' : '.5px solid lightskyblue',
-      borderLeft: bView ? 'none' : '.5px solid lightskyblue',
-      flexWrap: 'wrap',
-      backgroundColor: mParams.fbackground,
+      ...tileContainer,
+      borderTop: border,
+      borderLeft: border,
+      backgroundColor: fbackground,
     }}>
-      {getFloorTiles(mParams.fwidth, mParams.fheight)}
+      {getFloorTiles(fwidth, fheight)}
     </div>
   );
 }
+
+const tileContainer = {
+  display: 'inline-block',
+  flexWrap: 'wrap',
+};
 
 const breakWrap = {
   flexBasis: '100%',
