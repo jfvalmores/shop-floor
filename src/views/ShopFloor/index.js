@@ -1,11 +1,13 @@
 import Floor from './Floor';
+import Table from './Table';
 import FloorForm from './FloorForm';
-import FloorItem from './FloorItem';
 import FloorTile from './FloorTile';
+import TableProperties from './TableProperties';
 
 export {
   Floor,
+  Table,
   FloorForm,
-  FloorItem,
   FloorTile,
+  TableProperties,
 };

@@ -1,242 +1,496 @@
 {
   "shopFloorList": [
     {
+      "fwidth": 6,
+      "fheight": "8",
+      "fname": "Justine's 1st Floor",
+      "fbackground": "#97d6f8",
+      "factive_flag": true,
       "id": 1,
-      "floorName": "Justine's 1st Floor",
-      "width": 7,
-      "height": 9,
-      "background": "#f06060",
-      "activeFlag": true,
+      "activeFlagDisplay": "Yes",
       "objectList": [
         {
+          "fname": "yo wassup",
+          "fpax": "10",
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
           "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
           "y": 0,
-          "image": {
-            "data": "default",
-            "label": "Default"
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
           },
-          "prefix": "Default 1"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "image": {
-            "data": "default",
-            "label": "Default"
-          },
-          "prefix": "Default 2"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "image": {
-            "data": "default",
-            "label": "Default"
-          },
-          "prefix": "Default 3"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "floorName": "Justine's 2nd Floor",
-      "width": 5,
-      "height": 8,
-      "background": "#73fa73",
-      "activeFlag": false,
-      "objectList": [
-        {
-          "x": 0,
-          "y": 1,
-          "image": {
-            "data": "workstation",
-            "label": "Workstation"
-          },
-          "prefix": "Workstation 1"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "image": {
-            "data": "workstation",
-            "label": "Workstation"
-          },
-          "prefix": "Workstation 2"
-        },
-        {
-          "x": 5,
-          "y": 2,
-          "image": {
-            "data": "default",
-            "label": "Default"
-          },
-          "prefix": "Default 1"
-        }
-      ]
-    },
-    {
-      "width": "5",
-      "height": "7",
-      "floorName": "Justine 12",
-      "background": "#6fe493",
-      "activeFlag": true,
-      "id": 3,
-      "objectList": [
-        {
-          "x": 1,
-          "y": 2,
-          "image": {
-            "data": "default",
-            "label": "Default"
-          },
-          "prefix": "Table 1"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "image": {
-            "data": "default",
-            "label": "Default"
-          },
-          "prefix": "Table 2"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "image": {
-            "data": "default",
-            "label": "Default"
-          },
-          "prefix": "Table 3"
+          "fname": "Table 2"
         },
         {
           "x": 0,
           "y": 1,
-          "image": {
-            "data": "default",
-            "label": "Default"
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
           },
-          "prefix": "Table 4"
-        }
-      ]
-    },
-    {
-      "width": "10",
-      "height": "10",
-      "floorName": "yo",
-      "background": "#68bfd5",
-      "activeFlag": true,
-      "objectList": [
+          "fname": "Table 3"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 4"
+        },
         {
           "x": 2,
           "y": 0,
-          "image": {
-            "data": "customer",
-            "label": "Customer"
+          "fimage_type": {
+            "data": "0001",
+            "label": "Seat",
+            "prefix": "Seat"
           },
-          "prefix": "Customer 1"
+          "fname": "Seat 1"
         },
         {
           "x": 3,
           "y": 0,
-          "image": {
-            "data": "customer",
-            "label": "Customer"
+          "fimage_type": {
+            "data": "0001",
+            "label": "Seat",
+            "prefix": "Seat"
           },
-          "prefix": "Customer 2"
-        },
-        {
-          "x": 4,
-          "y": 0,
-          "image": {
-            "data": "customer",
-            "label": "Customer"
-          },
-          "prefix": "Customer 3"
-        },
-        {
-          "x": 5,
-          "y": 0,
-          "image": {
-            "data": "customer",
-            "label": "Customer"
-          },
-          "prefix": "Customer 4"
-        },
-        {
-          "x": 6,
-          "y": 0,
-          "image": {
-            "data": "customer",
-            "label": "Customer"
-          },
-          "prefix": "Customer 5"
-        },
-        {
-          "x": 7,
-          "y": 0,
-          "image": {
-            "data": "customer",
-            "label": "Customer"
-          },
-          "prefix": "Customer 6"
+          "fname": "Seat 2"
         },
         {
           "x": 2,
           "y": 1,
-          "image": {
-            "data": "vehicle",
-            "label": "Vehicle"
+          "fimage_type": {
+            "data": "0001",
+            "label": "Seat",
+            "prefix": "Seat"
           },
-          "prefix": "Vehicle 1"
+          "fname": "Seat 3"
         },
         {
           "x": 3,
           "y": 1,
-          "image": {
-            "data": "vehicle",
-            "label": "Vehicle"
+          "fimage_type": {
+            "data": "0001",
+            "label": "Seat",
+            "prefix": "Seat"
           },
-          "prefix": "Vehicle 2"
+          "fname": "Seat 4"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "fname": "Table 5"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "fname": "Table 6"
         },
         {
           "x": 4,
           "y": 1,
-          "image": {
-            "data": "vehicle",
-            "label": "Vehicle"
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
           },
-          "prefix": "Vehicle 3"
+          "fname": "Table 7"
         },
         {
           "x": 5,
           "y": 1,
-          "image": {
-            "data": "vehicle",
-            "label": "Vehicle"
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
           },
-          "prefix": "Vehicle 4"
+          "fname": "Table 8"
         },
         {
-          "x": 6,
-          "y": 1,
-          "image": {
-            "data": "vehicle",
-            "label": "Vehicle"
+          "x": 0,
+          "y": 2,
+          "fimage_type": {
+            "data": "0003",
+            "label": "Masseuse",
+            "prefix": "Masseuse"
           },
-          "prefix": "Vehicle 5"
+          "fname": "Masseuse 1"
         },
         {
-          "x": 7,
-          "y": 1,
-          "image": {
-            "data": "vehicle",
-            "label": "Vehicle"
+          "x": 1,
+          "y": 2,
+          "fimage_type": {
+            "data": "0003",
+            "label": "Masseuse",
+            "prefix": "Masseuse"
           },
-          "prefix": "Vehicle 6"
+          "fname": "Masseuse 2"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "fimage_type": {
+            "data": "0003",
+            "label": "Masseuse",
+            "prefix": "Masseuse"
+          },
+          "fname": "Masseuse 3"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "fimage_type": {
+            "data": "0003",
+            "label": "Masseuse",
+            "prefix": "Masseuse"
+          },
+          "fname": "Masseuse 4"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "fimage_type": {
+            "data": "0004",
+            "label": "Customer",
+            "prefix": "Customer"
+          },
+          "fname": "Customer 1"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "fimage_type": {
+            "data": "0004",
+            "label": "Customer",
+            "prefix": "Customer"
+          },
+          "fname": "Customer 2"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "fimage_type": {
+            "data": "0004",
+            "label": "Customer",
+            "prefix": "Customer"
+          },
+          "fname": "Customer 3"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "fimage_type": {
+            "data": "0004",
+            "label": "Customer",
+            "prefix": "Customer"
+          },
+          "fname": "Customer 4"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "fimage_type": {
+            "data": "0005",
+            "label": "Doctor",
+            "prefix": "Doctor"
+          },
+          "fname": "Doctor 1"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "fimage_type": {
+            "data": "0005",
+            "label": "Doctor",
+            "prefix": "Doctor"
+          },
+          "fname": "Doctor 2"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "fimage_type": {
+            "data": "0005",
+            "label": "Doctor",
+            "prefix": "Doctor"
+          },
+          "fname": "Doctor 3"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "fimage_type": {
+            "data": "0005",
+            "label": "Doctor",
+            "prefix": "Doctor"
+          },
+          "fname": "Doctor 4"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "fimage_type": {
+            "data": "0006",
+            "label": "Barber",
+            "prefix": "Barber"
+          },
+          "fname": "Barber 1"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "fimage_type": {
+            "data": "0006",
+            "label": "Barber",
+            "prefix": "Barber"
+          },
+          "fname": "Barber 2"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "fimage_type": {
+            "data": "0006",
+            "label": "Barber",
+            "prefix": "Barber"
+          },
+          "fname": "Barber 3"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "fimage_type": {
+            "data": "0006",
+            "label": "Barber",
+            "prefix": "Barber"
+          },
+          "fname": "Barber 4"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "fimage_type": {
+            "data": "0007",
+            "label": "Room",
+            "prefix": "Room"
+          },
+          "fname": "Room 1"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "fimage_type": {
+            "data": "0007",
+            "label": "Room",
+            "prefix": "Room"
+          },
+          "fname": "Room 2"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "fimage_type": {
+            "data": "0007",
+            "label": "Room",
+            "prefix": "Room"
+          },
+          "fname": "Room 3"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "fimage_type": {
+            "data": "0007",
+            "label": "Room",
+            "prefix": "Room"
+          },
+          "fname": "Room 4"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "fimage_type": {
+            "data": "0008",
+            "label": "Vehicle",
+            "prefix": "Vehicle"
+          },
+          "fname": "Vehicle 1"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "fimage_type": {
+            "data": "0008",
+            "label": "Vehicle",
+            "prefix": "Vehicle"
+          },
+          "fname": "Vehicle 2"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "fimage_type": {
+            "data": "0008",
+            "label": "Vehicle",
+            "prefix": "Vehicle"
+          },
+          "fname": "Vehicle 3"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "fimage_type": {
+            "data": "0008",
+            "label": "Vehicle",
+            "prefix": "Vehicle"
+          },
+          "fname": "Vehicle 4"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "fimage_type": {
+            "data": "0009",
+            "label": "Workstation",
+            "prefix": "Workstation"
+          },
+          "fname": "Workstation 1"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "fimage_type": {
+            "data": "0009",
+            "label": "Workstation",
+            "prefix": "Workstation"
+          },
+          "fname": "Workstation 2"
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "fimage_type": {
+            "data": "0009",
+            "label": "Workstation",
+            "prefix": "Workstation"
+          },
+          "fname": "Workstation 3"
+        },
+        {
+          "x": 1,
+          "y": 7,
+          "fimage_type": {
+            "data": "0009",
+            "label": "Workstation",
+            "prefix": "Workstation"
+          },
+          "fname": "Workstation 4"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "fimage_type": {
+            "data": "0010",
+            "label": "Machine",
+            "prefix": "Machine"
+          },
+          "fname": "Machine 1"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "fimage_type": {
+            "data": "0010",
+            "label": "Machine",
+            "prefix": "Machine"
+          },
+          "fname": "Machine 2"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "fimage_type": {
+            "data": "0010",
+            "label": "Machine",
+            "prefix": "Machine"
+          },
+          "fname": "Machine 3"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "fimage_type": {
+            "data": "0010",
+            "label": "Machine",
+            "prefix": "Machine"
+          },
+          "fname": "Machine 4"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "fimage_type": {
+            "data": "0010",
+            "label": "Machine",
+            "prefix": "Machine"
+          },
+          "fname": "Machine 5"
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "fimage_type": {
+            "data": "0010",
+            "label": "Machine",
+            "prefix": "Machine"
+          },
+          "fname": "Machine 6"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "fimage_type": {
+            "data": "0010",
+            "label": "Machine",
+            "prefix": "Machine"
+          },
+          "fname": "Machine 7"
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "fimage_type": {
+            "data": "0010",
+            "label": "Machine",
+            "prefix": "Machine"
+          },
+          "fname": "Machine 8"
         }
-      ],
-      "id": 4
+      ]
     }
   ]
 }

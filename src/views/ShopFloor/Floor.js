@@ -1,11 +1,11 @@
 import React from 'react';
 import {
+  Table,
   FloorTile,
-  FloorItem,
 } from './'
 
 function Floor(props) {
-  const { mParams, mObject } = props;
+  const { mParams, mTable } = props;
   const bView = props.formState === 'VIEW';
 
   const getFloorTiles = (width = 5, height = 5) => {
@@ -21,7 +21,7 @@ function Floor(props) {
   }
 
   const renderFloorTile = (x, y) => {
-    const key = `y-${y}-w-${x}`;
+    const key = generateKey(x, y);
     if (x < 0) {
       return <div key={key} style={breakWrap} />;
     }
@@ -36,20 +36,24 @@ function Floor(props) {
         performMoveObject={props.performMoveObject}
         performCanMoveObject={props.performCanMoveObject}
       >
-        {mObject.map(item => renderPiece(x, y, item))}
+        {mTable.map(item => renderPiece(x, y, item))}
       </FloorTile>
     );
   }
 
   const renderPiece = (x, y, item) => {
     const isObjectHere = x === item.x && y === item.y;
+    const sKey = generateKey(x, y);
+
     return isObjectHere ?
-      <FloorItem
-        key={`x-${x}-y-${y}`}
-        x={x} y={y}
-        image={item.image}
-        prefix={item.prefix}
-        formState={props.formState} /> : null;
+      <Table
+        key={sKey}
+        mKeys={item}
+        formState={props.formState}/> : null;
+  }
+
+  const generateKey = (x, y) => {
+    return `x-${x}-y-${y}`;
   }
 
   return (
@@ -58,9 +62,9 @@ function Floor(props) {
       borderTop: bView ? 'none' : '.5px solid lightskyblue',
       borderLeft: bView ? 'none' : '.5px solid lightskyblue',
       flexWrap: 'wrap',
-      backgroundColor: mParams.background,
+      backgroundColor: mParams.fbackground,
     }}>
-      {getFloorTiles(mParams.width, mParams.height)}
+      {getFloorTiles(mParams.fwidth, mParams.fheight)}
     </div>
   );
 }

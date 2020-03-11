@@ -2,49 +2,93 @@ import * as image from '../images';
 
 function ImageGetter() {
   const imageList = [
-    { data: 'default', label: 'Default' },
-    { data: 'seat', label: 'Seat' },
-    { data: 'largeTable', label: 'Large Table' },
-    { data: 'masseuse', label: 'Masseuse' },
-    { data: 'customer', label: 'Customer' },
-    { data: 'doctor', label: 'Doctor' },
-    { data: 'barber', label: 'Barber' },
-    { data: 'room', label: 'Room' },
-    { data: 'vehicle', label: 'Vehicle' },
-    { data: 'workstation', label: 'Workstation' },
-    { data: 'machine', label: 'Machine' },
+    {
+      data: '0000',
+      label: 'Default',
+      prefix: 'Table',
+    },
+    {
+      data: '0001',
+      label: 'Seat',
+      prefix: 'Seat',
+    },
+    {
+      data: '0002',
+      label: 'Large Table',
+      prefix: 'Table',
+    },
+    {
+      data: '0003',
+      label: 'Masseuse',
+      prefix: 'Masseuse',
+    },
+    {
+      data: '0004',
+      label: 'Customer',
+      prefix: 'Customer',
+    },
+    {
+      data: '0005',
+      label: 'Doctor',
+      prefix: 'Doctor',
+    },
+    {
+      data: '0006',
+      label: 'Barber',
+      prefix: 'Barber',
+    },
+    {
+      data: '0007',
+      label: 'Room',
+      prefix: 'Room',
+    },
+    {
+      data: '0008',
+      label: 'Vehicle',
+      prefix: 'Vehicle',
+    },
+    {
+      data: '0009',
+      label: 'Workstation',
+      prefix: 'Workstation',
+    },
+    {
+      data: '0010',
+      label: 'Machine',
+      prefix: 'Machine',
+    },
   ];
 
   const getImage = (id) => {
     switch (id) {
-      case 'seat':
+      case '0001':
         return image.Seat;
 
-      case 'largeTable':
+      case '0002':
         return image.LargeTable;
 
-      case 'masseuse':
+      case '0003':
         return image.Masseuse;
 
-      case 'customer':
+      case '0004':
         return image.Customer;
 
-      case 'doctor':
+      case '0005':
         return image.Doctor;
 
-      case 'barber':
+      case '0006':
         return image.Barber;
 
-      case 'room':
+      case '0007':
         return image.Room;
 
-      case 'vehicle':
+      case '0008':
         return image.Vehicle;
 
-      case 'workstation':
+      case '0009':
         return image.Workstation;
 
-      case 'machine':
+      case '0010':
         return image.Machine;
 
       default:

@@ -17,58 +17,65 @@ function FloorForm(props) {
     handleChange
   } = props;
 
+  const handleImageChange = (id, value) => {
+    handleChange('MULTIPLE', {
+      'fprefix' : String(value.prefix).trim() === 'Default' ? 'Table' : value.prefix,
+      [id]: value
+    });
+  }
+
   return (
     <div>
       <Divider />
       <div className={classes.content}>
         <InputField
-          id="floorName"
+          id="fname"
           label="Name"
           variant="outlined"
           required
-          value={mParams.floorName}
+          value={mParams.fname}
           disabled={props.formState === 'VIEW'}
           onChange={handleChange}
         />
 
         <CheckBox
           label="Active"
-          id="activeFlag"
-          checked={mParams.activeFlag}
+          id="factive_flag"
+          checked={mParams.factive_flag}
           onChange={handleChange}
           disabled={props.formState === 'VIEW'}
-          value={mParams.activeFlag} />
+          value={mParams.factive_flag} />
 
       </div>
       <Divider />
       <div className={classes.content}>
         <ColorPicker
-          id="background"
+          id="fbackground"
           label="Background"
-          value={mParams.background}
+          value={mParams.fbackground}
           onChange={handleChange}
           disabled={props.formState === 'VIEW'} />
 
         <div style={{ display: 'flex' }}>
           <InputField
             instantUpdate
-            id="width"
+            id="fwidth"
             label="Width"
             type="number"
             style={{ width: 90, margin: 5 }}
             disabled={props.formState === 'VIEW'}
             onChange={handleChange}
-            value={mParams.width} />
+            value={mParams.fwidth} />
 
           <InputField
             instantUpdate
-            id="height"
+            id="fheight"
             label="Height"
             type="number"
             style={{ width: 90, margin: 5 }}
             disabled={props.formState === 'VIEW'}
             onChange={handleChange}
-            value={mParams.height} />
+            value={mParams.fheight} />
         </div>
 
       </div>
@@ -79,48 +86,48 @@ function FloorForm(props) {
 
           <CheckBox
             switchBtn
-            id="addRemoveObject"
+            id="fupdate_mode_flag"
             label="Add/Remove Object"
             onChange={handleChange}
-            value={mParams.addRemoveObject}
-            checked={mParams.addRemoveObject}
+            value={mParams.fupdate_mode_flag}
+            checked={mParams.fupdate_mode_flag}
             disabled={props.formState === 'VIEW'} />
 
           <CheckBox
             switchBtn
-            id="arrangeObject"
+            id="farrange_mode_flag"
             label="Arrange Object"
             onChange={handleChange}
-            value={mParams.arrangeObject}
-            checked={mParams.arrangeObject}
+            value={mParams.farrange_mode_flag}
+            checked={mParams.farrange_mode_flag}
             disabled={props.formState === 'VIEW'} />
 
-          {mParams.addRemoveObject &&
+          {mParams.fupdate_mode_flag &&
             <>
               <div>
                 <SelectDropdown
-                  id="image"
+                  id="fimage_type"
                   label="Image"
-                  value={mParams.image}
-                  onChange={handleChange}
+                  value={mParams.fimage_type}
+                  onChange={handleImageChange}
                   dataProvider={imageList}
                   disabled={props.formState === 'VIEW'} />
               </div>
               <div>
-                {mParams.image.data &&
+                {mParams.fimage_type.data &&
                   <img
                     style={{ padding: 10 }}
-                    src={getImage(mParams.image.data)}
+                    src={getImage(mParams.fimage_type.data)}
                     alt="Table" />
                 }
               </div>
               <InputField
-                id="prefix"
+                id="fprefix"
                 label="Prefix"
                 type="text"
                 disabled={props.formState === 'VIEW'}
                 onChange={handleChange}
-                value={mParams.prefix} />
+                value={mParams.fprefix} />
             </>
           }
 

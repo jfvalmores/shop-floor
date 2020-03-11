@@ -18,7 +18,7 @@ const ShopFloorList = (props) => {
 
   const def = [
     { header: 'ID', datafield: 'id' },
-    { header: 'Name', datafield: 'floorName', type: 'hyperlink' },
+    { header: 'Name', datafield: 'fname', type: 'hyperlink' },
     { header: 'Active', datafield: 'activeFlagDisplay' },
   ]
 
@@ -44,7 +44,7 @@ const ShopFloorList = (props) => {
     return list.map(item => {
       return {
         ...item,
-        activeFlagDisplay: item['activeFlag'] ? 'Yes' : 'No',
+        activeFlagDisplay: item['factive_flag'] ? 'Yes' : 'No',
       };
     })
   }

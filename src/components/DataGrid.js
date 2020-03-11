@@ -23,8 +23,8 @@ const DataGrid = (props) => {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            {props.def.map(cell => 
-              <TableCell 
+            {props.def.map(cell =>
+              <TableCell
                 key={cell.datafield}>
                 {cell.header}
               </TableCell>
@@ -32,31 +32,43 @@ const DataGrid = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.list.map((row, index) => (
-            <TableRow
-              hover
-              key={row.id}
-              onClick={() => props.onClick(index)}>
-              {props.def.map(cell =>
-                <TableCell 
-                  key={cell.datafield} 
-                  component="th" 
-                  scope="row">
-                  {cell.type === 'hyperlink' ?
-                    <a 
-                      href="#"
-                      onClick={() => props.onClick(index)}>
-                      {row[cell.datafield]}
-                    </a>
-                    :
-                    <React.Fragment>
-                      {row[cell.datafield]}
-                    </React.Fragment>
-                  }
+          {(props.list && props.list.length > 0) ?
+            <React.Fragment>
+              {props.list.map((row, index) => (
+                <TableRow
+                  hover
+                  key={row.id}
+                  onClick={() => props.onClick(index)}>
+                  {props.def.map(cell =>
+                    <TableCell
+                      key={cell.datafield}
+                      component="th"
+                      scope="row">
+                      {cell.type === 'hyperlink' ?
+                        <a
+                          href="#"
+                          onClick={() => props.onClick(index)}>
+                          {row[cell.datafield]}
+                        </a>
+                        :
+                        <React.Fragment>
+                          {row[cell.datafield]}
+                        </React.Fragment>
+                      }
+                    </TableCell>
+                  )}
+                </TableRow>
+              ))}
+            </React.Fragment>
+            :
+            <React.Fragment>
+              <TableRow>
+                <TableCell>
+                  <p>No records found.</p>
                 </TableCell>
-              )}
-            </TableRow>
-          ))}
+              </TableRow>
+            </React.Fragment>
+          }
         </TableBody>
       </Table>
     </TableContainer>
