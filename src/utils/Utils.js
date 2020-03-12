@@ -32,8 +32,8 @@ const Utils = () => {
   return {
     getPrefix,
     trimFloor,
-    getNextPrefixCount,
     getIndexFromList,
+    getNextPrefixCount,
     getObjectFromIndex,
   };
 };

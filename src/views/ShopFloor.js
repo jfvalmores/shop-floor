@@ -30,7 +30,7 @@ const ShopFloor = (props) => {
     fwidth: 6,
     fheight: 6,
     fname: '',
-    fbackground: '#97D6F8',
+    fbackground: '#83F8B8',
     factive_flag: true,
     farrange_mode_flag: false,
     fupdate_mode_flag: false,
@@ -116,7 +116,7 @@ const ShopFloor = (props) => {
 
   const performMoveObject = (item, destination) => {
     const { mKeys } = item;
-    const { toX, toY } = destination;
+    const { x: toX, y: toY } = destination;
     const list = mTableList.slice();
     const index = getIndexFromList(mTableList, mKeys.x, mKeys.y);
     list[index]['x'] = toX;
@@ -150,7 +150,7 @@ const ShopFloor = (props) => {
       factive_flagDisplay,
       ...params
     } = mParams;
-    params['objectList'] = trimFloor(mTableList, mParams.fwidth - 1, mParams.fheight - 1);
+    params['objectList'] = trimFloor(mTableList, mParams.fwidth, mParams.fheight);
     let response;
 
     if (params.id) {

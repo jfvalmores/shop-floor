@@ -56,12 +56,20 @@ const Floor = (props) => {
 
   return (
     <div style={{
-      ...tileContainer,
-      borderTop: border,
-      borderLeft: border,
-      backgroundColor: fbackground,
+      width: '100%',
+      height: '100%',
+      overflow: 'auto'
     }}>
-      {getFloorTiles(fwidth, fheight)}
+      <div>
+        <div style={{
+          ...tileContainer,
+          borderTop: border,
+          borderLeft: border,
+          backgroundColor: fbackground,
+        }}>
+          {getFloorTiles(fwidth, fheight)}
+        </div>
+      </div>
     </div>
   );
 }

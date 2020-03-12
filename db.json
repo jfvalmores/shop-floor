@@ -254,170 +254,6 @@
       ]
     },
     {
-      "fwidth": "6",
-      "fheight": "5",
-      "fname": "asd",
-      "fbackground": "#97D6F8",
-      "factive_flag": true,
-      "objectList": [
-        {
-          "x": 0,
-          "y": 5,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 1"
-        },
-        {
-          "x": 1,
-          "y": 5,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 2"
-        },
-        {
-          "x": 2,
-          "y": 5,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 3"
-        },
-        {
-          "x": 3,
-          "y": 5,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 4"
-        },
-        {
-          "x": 4,
-          "y": 5,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 5"
-        },
-        {
-          "x": 5,
-          "y": 5,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 6"
-        },
-        {
-          "x": 5,
-          "y": 4,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 7"
-        },
-        {
-          "x": 5,
-          "y": 3,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 8"
-        },
-        {
-          "x": 5,
-          "y": 2,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 9"
-        },
-        {
-          "x": 5,
-          "y": 0,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 10"
-        },
-        {
-          "x": 5,
-          "y": 1,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 11"
-        },
-        {
-          "x": 4,
-          "y": 3,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 12"
-        },
-        {
-          "x": 4,
-          "y": 4,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 13"
-        },
-        {
-          "x": 3,
-          "y": 4,
-          "fpax": 4,
-          "fimage_type": {
-            "data": "0000",
-            "label": "Default",
-            "prefix": "Table"
-          },
-          "fname": "Table 14"
-        }
-      ],
-      "id": 2
-    },
-    {
       "fwidth": "8",
       "fheight": "6",
       "fname": "Floor 3",
@@ -559,6 +395,467 @@
           "fname": "Customer 3"
         }
       ]
+    },
+    {
+      "fwidth": "7",
+      "fheight": "7",
+      "fname": "Justine's 2nd Floor",
+      "fbackground": "#e5f897",
+      "factive_flag": true,
+      "id": 4,
+      "activeFlagDisplay": "Yes",
+      "objectList": [
+        {
+          "x": 3,
+          "y": 2,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Pungko pungko 1"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Pungko pungko 2"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Pungko pungko 3"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Pungko pungko 4"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Pungko pungko 5"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Pungko pungko 6"
+        },
+        {
+          "fname": "Tuslob  buwa 1",
+          "fpax": "6",
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "fname": "Tuslob  buwa 2",
+          "fpax": "6",
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "x": 1,
+          "y": 2
+        },
+        {
+          "fname": "Tuslob  buwa 3",
+          "fpax": "6",
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "x": 0,
+          "y": 3
+        },
+        {
+          "fname": "Tuslob  buwa 4",
+          "fpax": "6",
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "x": 1,
+          "y": 3
+        },
+        {
+          "fname": "Tuslob  buwa 5",
+          "fpax": "6",
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "x": 0,
+          "y": 4
+        },
+        {
+          "fname": "Tuslob  buwa 6",
+          "fpax": "6",
+          "fimage_type": {
+            "data": "0002",
+            "label": "Large Table",
+            "prefix": "Table"
+          },
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Barbekyuhan 2"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Barbekyuhan 3"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Barbekyuhan 4"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Barbekyuhan 5"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Barbekyuhan 6"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Barbekyuhan 7"
+        }
+      ]
+    },
+    {
+      "fwidth": 6,
+      "fheight": 6,
+      "fname": "Garage",
+      "fbackground": "#97D6F8",
+      "factive_flag": true,
+      "id": 5,
+      "activeFlagDisplay": "Yes",
+      "objectList": [
+        {
+          "x": 0,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0008",
+            "label": "Vehicle",
+            "prefix": "Vehicle"
+          },
+          "fname": "Vehicle 1"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0008",
+            "label": "Vehicle",
+            "prefix": "Vehicle"
+          },
+          "fname": "Vehicle 2"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0008",
+            "label": "Vehicle",
+            "prefix": "Vehicle"
+          },
+          "fname": "Vehicle 3"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 12"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 13"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 14"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 15"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 16"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 17"
+        }
+      ]
+    },
+    {
+      "fwidth": 6,
+      "fheight": 6,
+      "fname": "Basement",
+      "fbackground": "#83F8B8",
+      "factive_flag": true,
+      "objectList": [
+        {
+          "x": 0,
+          "y": 5,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 1"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 2"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 3"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 4"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 5"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 6"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 7"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 8"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 9"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 10"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 11"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "fpax": 4,
+          "fimage_type": {
+            "data": "0000",
+            "label": "Default",
+            "prefix": "Table"
+          },
+          "fname": "Table 12"
+        }
+      ],
+      "id": 6
     }
   ]
 }
