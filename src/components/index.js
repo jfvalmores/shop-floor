@@ -1,6 +1,7 @@
 import Popup from './Popup';
 import Sidebar from './Sidebar';
 import FabIcon from './FabIcon';
+import ComboBox from './ComboBox';
 import CheckBox from './CheckBox';
 import DataGrid from './DataGrid';
 import InputField from './InputField';
@@ -13,6 +14,7 @@ export {
   Popup,
   Sidebar,
   FabIcon,
+  ComboBox,
   CheckBox,
   DataGrid,
   InputField,

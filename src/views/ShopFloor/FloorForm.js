@@ -4,9 +4,9 @@ import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   CheckBox,
+  ComboBox,
   InputField,
   ColorPicker,
-  SelectDropdown,
 } from '../../components/';
 import ImageGetter from '../../utils/ImageGetter.js';
 
@@ -96,7 +96,7 @@ function FloorForm(props) {
           {mParams.fupdate_mode_flag &&
             <>
               <div>
-                <SelectDropdown
+                <ComboBox
                   id="fimage_type"
                   label="Image"
                   value={mParams.fimage_type}

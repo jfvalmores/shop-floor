@@ -32,8 +32,8 @@ const ShopFloor = (props) => {
     fname: '',
     fbackground: '#83F8B8',
     factive_flag: true,
+    fupdate_mode_flag: true,
     farrange_mode_flag: false,
-    fupdate_mode_flag: false,
     fimage_type: imageList[0],
     fprefix: 'Table',
   };
