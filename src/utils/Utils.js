@@ -5,17 +5,18 @@ const Utils = () => {
   }
 
   const getNextPrefixCount = (list, prefix = 'Default') => {
-    let nextCount = 0;
-    list.forEach(item => {
-      if (prefix === getPrefix(item.fname)) {
-        const section = item.fname.split(' ');
-        const curr = parseInt(section[section.length - 1]);
-        if (curr > nextCount) nextCount = curr;
-      }
-    });
+      let nextCount = 0;
+      list.forEach(item => {
+          const section = item.fname.split(' ');
+          const prefixSection = section.slice(0, section.length - 1);
+          if (prefix === prefixSection.join(' ')) {
+              const curr = parseInt(section[section.length - 1]);
+              if (curr > nextCount) nextCount = curr;
+          }
+      });
 
-    return nextCount += 1;
-  }
+      return (nextCount += 1);
+  };
 
   const trimFloor = (list, width, height) => {
     return list.filter(item => item.x <= width - 1 && item.y <= height - 1);
