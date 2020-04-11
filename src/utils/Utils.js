@@ -1,7 +1,10 @@
 const Utils = () => {
 
   const getPrefix = (s) => {
-    return s.replace(/[0-9]/g, '').trim();
+    let sections = s.trim().split(' ');
+    sections.pop();
+    const str = sections.join(' ');
+    return str;
   }
 
   const getNextPrefixCount = (list, prefix = 'Default') => {
