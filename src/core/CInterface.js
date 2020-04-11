@@ -4,7 +4,6 @@ import { serverURL } from '../config.js';
 const url = serverURL;
 
 const handleResult = (response, cb) => {
-  console.log(response);
   if (!response.data) return null;
 
   return response.data;

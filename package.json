@@ -21,11 +21,7 @@
     "redux": "^4.0.5"
   },
   "scripts": {
-<<<<<<< HEAD
     "start": "concurrently \"json-server -w db.json -p 3005\" \"react-scripts start\"",
-=======
-    "start": "concurrently \"json-server -w db.json -p 3004\" \"react-scripts start\"",
->>>>>>> 0577f8779869118d6063d6da9edf4dfc1de06abe
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
