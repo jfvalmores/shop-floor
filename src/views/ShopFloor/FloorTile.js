@@ -2,6 +2,7 @@ import React from 'react';
 import { useDrop } from 'react-dnd'
 import { makeStyles } from '@material-ui/core/styles';
 import Overlay from './Overlay';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 function FloorTile(props) {
   const {
@@ -53,6 +54,7 @@ const styles = makeStyles({
   },
   overlay: {
     position: 'relative',
+    margin: 'auto',
     width: '80%',
     height: '80%',
   }
