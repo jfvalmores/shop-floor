@@ -42,8 +42,8 @@ function FloorTile(props) {
 
 const styles = makeStyles({
   container: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     borderRight: props => props.formState === 'VIEW' ?
       'none' : '.5px solid lightskyblue',
     borderBottom: props => props.formState === 'VIEW' ?
@@ -53,8 +53,8 @@ const styles = makeStyles({
   },
   overlay: {
     position: 'relative',
-    width: '100%',
-    height: '100%',
+    width: '80%',
+    height: '80%',
   }
 });
 

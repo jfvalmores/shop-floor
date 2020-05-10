@@ -65,6 +65,7 @@ const Floor = (props) => {
           ...tileContainer,
           borderTop: border,
           borderLeft: border,
+          width: `${+fwidth * 100}px`,
           backgroundColor: fbackground,
         }}>
           {getFloorTiles(fwidth, fheight)}

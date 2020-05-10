@@ -96,7 +96,7 @@ const TableProperties = (props) => {
           <div style={{ margin: 10 }}>
             {mKeys.fimage_type.data &&
               <img
-                style={{ padding: 10 }}
+                style={{ padding: 10, maxWidth: 200, maxHeight: 125 }}
                 src={getImage(mKeys.fimage_type.data)}
                 alt="Table" />
             }

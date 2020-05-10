@@ -62,8 +62,9 @@ const style = makeStyles({
     cursor: 'pointer',
   },
   img: {
-    width: '100%',
-    padding: '3px 20px 0'
+    maxWidth: '100%',
+    maxHeight: 70,
+    padding: '3px'
   },
   prefix: {
     textAlign: 'center'
@@ -71,6 +72,8 @@ const style = makeStyles({
   table: {
     position: 'absolute',
     height: '100%',
+    width: '100%',
+    textAlign: 'center'
   }
 });
 

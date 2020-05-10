@@ -45,7 +45,6 @@ function FloorForm(props) {
           disabled={props.formState === 'VIEW'}
           value={mParams.factive_flag} />
       </div>
-      <Divider />
       <div className={classes.content}>
         <ColorPicker
           id="fbackground"
@@ -77,10 +76,11 @@ function FloorForm(props) {
       <Divider />
       {props.formState !== 'VIEW' &&
         <div className={classes.content}>
+          <h3>Object</h3>
           <CheckBox
             switchBtn
             id="fupdate_mode_flag"
-            label="Add/Remove Object"
+            label="Add/Remove"
             onChange={handleChange}
             value={mParams.fupdate_mode_flag}
             checked={mParams.fupdate_mode_flag}
@@ -88,7 +88,7 @@ function FloorForm(props) {
           <CheckBox
             switchBtn
             id="farrange_mode_flag"
-            label="Arrange Object"
+            label="Arrange"
             onChange={handleChange}
             value={mParams.farrange_mode_flag}
             checked={mParams.farrange_mode_flag}
@@ -107,7 +107,7 @@ function FloorForm(props) {
               <div>
                 {mParams.fimage_type.data &&
                   <img
-                    style={{ padding: 10 }}
+                    style={{ padding: 10, maxWidth: 200, maxHeight: 125 }}
                     src={getImage(mParams.fimage_type.data)}
                     alt="Table" />
                 }
