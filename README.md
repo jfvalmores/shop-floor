@@ -8,4 +8,4 @@ Layout shop floors
     * Drag-and-drop Objects
     
 ## Demo
-[Shop Floor](https://suspicious-jepsen-2d8dd7.netlify.app)
+[Shop Floor Layout](https://suspicious-jepsen-2d8dd7.netlify.app)
